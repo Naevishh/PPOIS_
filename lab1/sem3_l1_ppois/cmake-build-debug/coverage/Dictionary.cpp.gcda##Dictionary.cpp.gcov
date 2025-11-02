@@ -1,0 +1,269 @@
+        -:    0:Source:C:/Users/aleks/CLionProjects/sem3_l1_ppois/Dictionary/Dictionary.cpp
+        -:    0:Graph:C:\Users\aleks\CLionProjects\sem3_l1_ppois\cmake-build-debug\Dictionary\CMakeFiles\Dictionary.dir\Dictionary.cpp.gcno
+        -:    0:Data:C:\Users\aleks\CLionProjects\sem3_l1_ppois\cmake-build-debug\Dictionary\CMakeFiles\Dictionary.dir\Dictionary.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <string>
+        -:    2:#include <iostream>
+        -:    3:#include <fstream>
+        -:    4:#include <stdexcept>
+        -:    5:#include "Dictionary.h"
+        -:    6:#include "string_validator.h"
+        -:    7:
+function _ZlsRSoRK10dictionary called 2 returned 100% blocks executed 100%
+        2:    8:std::ostream& operator<<(std::ostream& output, const dictionary& dict_to_print) {
+        2:    9:    size_t counter = 0;
+        2:   10:    dict_to_print.dictionary_tree.inorder_traverse(
+        2:   10-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+function _ZZlsRSoRK10dictionaryENKUlRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESA_E_clESA_SA_ called 2 returned 100% blocks executed 100%
+        2:   11:            [&output, &counter](const std::string& english_word, const std::string& russian_word) {
+        2:   12:                output << ++counter << ". " << english_word << " - " << russian_word << "\n";
+        2:   12-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+call    4 returned 2
+call    5 returned 2
+        2:   13:            });
+        2:   14:    return output;
+        2:   14-block  0
+        2:   14-block  1
+        -:   15:}
+        -:   16:
+function _ZrsRSiR10dictionary called 6 returned 100% blocks executed 81%
+        6:   17:std::istream& operator>>(std::istream& input, dictionary& dictionary){
+        6:   18:    std::string current_line;
+        6:   18-block  0
+call    0 returned 6
+       25:   19:    while (std::getline(input, current_line)){
+       25:   19-block  0
+call    0 returned 25
+branch  1 taken 25 (fallthrough)
+branch  2 taken 0 (throw)
+       25:   19-block  1
+call    3 returned 25
+branch  4 taken 25 (fallthrough)
+branch  5 taken 0 (throw)
+       25:   19-block  2
+branch  6 taken 19
+branch  7 taken 6 (fallthrough)
+       19:   20:        if (!current_line.empty()){
+       19:   20-block  0
+call    0 returned 19
+branch  1 taken 15 (fallthrough)
+branch  2 taken 4
+        -:   21:            try {
+       15:   22:                std::pair<std::string, std::string> new_pair = string_validator::word_pair_input(current_line);
+       15:   22-block  0
+call    0 returned 15
+branch  1 taken 13 (fallthrough)
+branch  2 taken 2 (throw)
+       13:   23:                if (!dictionary.contains_word(new_pair.first)) dictionary+=new_pair;
+       13:   23-block  0
+call    0 returned 13
+branch  1 taken 13 (fallthrough)
+branch  2 taken 0 (throw)
+       13:   23-block  1
+branch  3 taken 12 (fallthrough)
+branch  4 taken 1
+       12:   23-block  2
+call    5 returned 12
+branch  6 taken 12 (fallthrough)
+branch  7 taken 0 (throw)
+       15:   24:            } catch (const std::invalid_argument& exception) {
+       13:   24-block  0
+call    0 returned 13
+    $$$$$:   24-block  1
+call    1 never executed
+        2:   24-block  2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+        2:   24-block  3
+call    4 returned 2
+        -:   25:                // скип
+        2:   26:            }
+call    0 returned 2
+        -:   27:        }
+        -:   28:    }
+        6:   29:    return input;
+        6:   29-block  0
+        6:   30:}
+        6:   30-block  0
+call    0 returned 6
+    $$$$$:   30-block  1
+call    1 never executed
+        -:   31:
+function _ZNK10dictionary13contains_wordERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 40 returned 100% blocks executed 100%
+       40:   32:bool dictionary::contains_word(const std::string& english_word) const{
+       40:   33:    return dictionary_tree.contains_node(english_word);
+       40:   33-block  0
+call    0 returned 40
+        -:   34:}
+        -:   35:
+function _ZNK10dictionaryixERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   36:const std::string& dictionary::operator[](const std::string& input_word) const {
+    #####:   37:    return dictionary_tree.get_value(input_word);
+    %%%%%:   37-block  0
+call    0 never executed
+        -:   38:}
+        -:   39:
+function _ZN10dictionaryixERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 18 returned 83% blocks executed 100%
+       18:   40:std::string& dictionary::operator[](const std::string& input_word) {
+       18:   41:    return dictionary_tree.get_value(input_word);
+       18:   41-block  0
+call    0 returned 15
+        -:   42:}
+        -:   43:
+function _ZN10dictionarypLERKSt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_E called 12 returned 100% blocks executed 56%
+       12:   44:dictionary& dictionary::operator+=(const std::pair<std::string, std::string>& english_russian_pair) {
+       12:   45:    if (!dictionary_tree.insert_helper(english_russian_pair.first,english_russian_pair.second)) {
+       12:   45-block  0
+call    0 returned 12
+branch  1 taken 0 (fallthrough)
+branch  2 taken 12
+    #####:   46:        throw std::invalid_argument("Слово уже существует в словаре");
+    %%%%%:   46-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:   46-block  1
+call    4 never executed
+    $$$$$:   46-block  2
+call    5 never executed
+        -:   47:    }
+       12:   48:    return *this;
+       12:   48-block  0
+       12:   48-block  1
+        -:   49:}
+        -:   50:
+function _ZN10dictionarypLERKSt4pairIPKcS2_E called 164 returned 98% blocks executed 58%
+      164:   51:dictionary& dictionary::operator+=(const std::pair<const char*, const char*>& english_russian_pair) {
+      820:   52:    if (!dictionary_tree.insert_helper(english_russian_pair.first,english_russian_pair.second)) {
+      164:   52-block  0
+      164:   52-block  1
+call    0 returned 164
+branch  1 taken 164 (fallthrough)
+branch  2 taken 0 (throw)
+      164:   52-block  2
+call    3 returned 164
+branch  4 taken 164 (fallthrough)
+branch  5 taken 0 (throw)
+      164:   52-block  3
+call    6 returned 164
+branch  7 taken 164 (fallthrough)
+branch  8 taken 0 (throw)
+      164:   52-block  4
+call    9 returned 164
+call   10 returned 164
+branch 11 taken 3 (fallthrough)
+branch 12 taken 161
+    $$$$$:   52-block  5
+call   13 never executed
+    $$$$$:   52-block  6
+    $$$$$:   52-block  7
+    $$$$$:   52-block  8
+call   14 never executed
+    $$$$$:   52-block  9
+    $$$$$:   52-block 10
+call   15 never executed
+        3:   53:        throw std::invalid_argument("Слово уже существует в словаре");
+        3:   53-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:   53-block  1
+call    4 returned 0
+    $$$$$:   53-block  2
+call    5 never executed
+        -:   54:    }
+      161:   55:    return *this;
+      161:   55-block  0
+      161:   55-block  1
+        -:   56:}
+        -:   57:
+function _ZN10dictionarymIERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 8 returned 75% blocks executed 89%
+        8:   58:dictionary& dictionary::operator-=(const std::string& english_word) {
+        8:   59:    if (!dictionary_tree.delete_helper(english_word)) {
+        8:   59-block  0
+call    0 returned 8
+branch  1 taken 2 (fallthrough)
+branch  2 taken 6
+        2:   60:        throw std::invalid_argument("Слова не существует в словаре");
+        2:   60-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   60-block  1
+call    4 returned 0
+    $$$$$:   60-block  2
+call    5 never executed
+        -:   61:    }
+        6:   62:    return *this;
+        6:   62-block  0
+        6:   62-block  1
+        -:   63:}
+        -:   64:
+function _ZNK10dictionaryeqERKS_ called 7 returned 100% blocks executed 100%
+        7:   65:bool dictionary::operator==(const dictionary& other) const {
+        7:   66:    return other.dictionary_tree == this->dictionary_tree;
+        7:   66-block  0
+call    0 returned 7
+        -:   67:}
+        -:   68:
+function _ZNK10dictionaryneERKS_ called 2 returned 100% blocks executed 100%
+        2:   69:bool dictionary::operator!=(const dictionary& other) const {
+        2:   70:    return !(*this == other);
+        2:   70-block  0
+call    0 returned 2
+        -:   71:}
+        -:   72:
+function _ZNK10dictionary8get_sizeEv called 14 returned 100% blocks executed 100%
+       14:   73:int dictionary::get_size() const {
+       14:   74:    return dictionary_tree.get_size();
+       14:   74-block  0
+call    0 returned 14
+        -:   75:}
+        -:   76:
+function _ZNK10dictionary8is_emptyEv called 5 returned 100% blocks executed 100%
+        5:   77:bool dictionary::is_empty() const {
+        5:   78:    return dictionary_tree.empty_tree();
+        5:   78-block  0
+call    0 returned 5
+        -:   79:}
+        -:   80:
+function _ZN10dictionary14read_from_fileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 3 returned 100% blocks executed 80%
+        3:   81:void dictionary::read_from_file(const std::string& file_name) {
+        3:   82:    std::ifstream txt_file(file_name);
+        3:   82-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   83:    if (txt_file.is_open()) {
+        3:   83-block  0
+call    0 returned 3
+branch  1 taken 2 (fallthrough)
+branch  2 taken 1
+        2:   84:        txt_file >> *this;
+        2:   84-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   85:        txt_file.close();
+        2:   85-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   86:    }
+        3:   87:}
+        3:   87-block  0
+call    0 returned 3
+    $$$$$:   87-block  1
+call    1 never executed
+        -:   88:
+        -:   89:

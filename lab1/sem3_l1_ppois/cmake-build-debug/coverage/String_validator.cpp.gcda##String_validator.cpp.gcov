@@ -1,0 +1,396 @@
+        -:    0:Source:C:/Users/aleks/CLionProjects/sem3_l1_ppois/Dictionary/String_validator.cpp
+        -:    0:Graph:C:\Users\aleks\CLionProjects\sem3_l1_ppois\cmake-build-debug\Dictionary\CMakeFiles\Dictionary.dir\String_validator.cpp.gcno
+        -:    0:Data:C:\Users\aleks\CLionProjects\sem3_l1_ppois\cmake-build-debug\Dictionary\CMakeFiles\Dictionary.dir\String_validator.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "String_validator.h"
+        -:    2:#include <string>
+        -:    3:#include <stdexcept>
+        -:    4:#include <cctype>
+        -:    5:
+function _ZN16string_validator18valid_english_wordERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 15 returned 100% blocks executed 100%
+       15:    6:bool string_validator::valid_english_word(const std::string& english_word) {
+       80:    7:    for (char symbol: english_word) {
+       15:    7-block  0
+call    0 returned 15
+call    1 returned 15
+       67:    7-block  1
+call    2 returned 67
+       65:    7-block  2
+call    3 returned 65
+       80:    7-block  3
+call    4 returned 80
+branch  5 taken 67
+branch  6 taken 13 (fallthrough)
+       67:    8:        if (!std::isalpha(static_cast<unsigned char>(symbol))
+branch  0 taken 2 (fallthrough)
+branch  1 taken 65
+        2:    9:            && symbol != '\'' && symbol != '-')
+        2:    9-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 0
+        2:    9-block  1
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0
+        2:   10:            return false;
+        2:   10-block  0
+        -:   11:    }
+       13:   12:    return is_correct_length(english_word);
+       13:   12-block  0
+call    0 returned 13
+        -:   13:}
+        -:   14:
+function _ZN16string_validator18valid_russian_wordERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 13 returned 100% blocks executed 86%
+       13:   15:bool string_validator::valid_russian_word(const std::string& russian_word) {
+       13:   15-block  0
+        -:   16:    const std::string valid_chars =
+        -:   17:            "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+        -:   18:            "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+       13:   19:            "'-";
+       13:   19-block  0
+call    0 returned 13
+branch  1 taken 13 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   19-block  1
+      139:   20:    for (char character : russian_word) {
+call    0 returned 13
+call    1 returned 13
+      127:   20-block  0
+call    2 returned 127
+      126:   20-block  1
+call    3 returned 126
+      139:   20-block  2
+call    4 returned 139
+branch  5 taken 127
+branch  6 taken 12 (fallthrough)
+      127:   21:        if (valid_chars.find(character) == std::string::npos) {
+call    0 returned 127
+branch  1 taken 1 (fallthrough)
+branch  2 taken 126
+        1:   22:            return false;
+        1:   22-block  0
+        -:   23:        }
+        -:   24:    }
+       12:   25:    return is_correct_length_rus(russian_word);
+       12:   25-block  0
+call    0 returned 12
+       13:   26:}
+       13:   26-block  0
+call    0 returned 13
+        -:   27:
+function _ZN16string_validator17is_correct_lengthERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 13 returned 100% blocks executed 88%
+       13:   28:bool string_validator::is_correct_length(const std::string& input_word) {
+      13*:   29:    return (input_word.size() >= 1 && input_word.size() <= 50);
+       13:   29-block  0
+call    0 returned 13
+branch  1 taken 13 (fallthrough)
+branch  2 taken 0
+       13:   29-block  1
+call    3 returned 13
+branch  4 taken 13 (fallthrough)
+branch  5 taken 0
+       13:   29-block  2
+    %%%%%:   29-block  3
+       13:   29-block  4
+        -:   30:}
+        -:   31:
+function _ZN16string_validator21is_correct_length_rusERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 12 returned 100% blocks executed 88%
+       12:   32:bool string_validator::is_correct_length_rus(const std::string& input_word) {
+      12*:   33:    return (input_word.size()/2 >= 1 && input_word.size()/2 <= 50);
+       12:   33-block  0
+call    0 returned 12
+branch  1 taken 12 (fallthrough)
+branch  2 taken 0
+       12:   33-block  1
+call    3 returned 12
+branch  4 taken 12 (fallthrough)
+branch  5 taken 0
+       12:   33-block  2
+    %%%%%:   33-block  3
+       12:   33-block  4
+        -:   34:}
+        -:   35:
+function _ZN16string_validator8to_lowerERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 28 returned 100% blocks executed 67%
+       28:   36:std::string string_validator::to_lower(const std::string& input_string) {
+       28:   37:    std::string result = input_string;
+       28:   37-block  0
+call    0 returned 28
+      245:   38:    for (size_t i = 0; i < result.length(); i++) {
+      217:   38-block  0
+      245:   38-block  1
+call    0 returned 245
+branch  1 taken 217
+branch  2 taken 28 (fallthrough)
+      217:   39:        unsigned char c = result[i];
+      217:   39-block  0
+call    0 returned 217
+branch  1 taken 217 (fallthrough)
+branch  2 taken 0 (throw)
+      217:   40:        if (c >= 'A' && c <= 'Z') {
+      217:   40-block  0
+branch  0 taken 217 (fallthrough)
+branch  1 taken 0
+      217:   40-block  1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 217
+    #####:   41:            result[i] = c + 32;
+    %%%%%:   41-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   41-block  1
+        -:   42:        }
+      217:   43:        else if (c == 0xD0 && i + 1 < result.length()) {
+      217:   43-block  0
+branch  0 taken 54 (fallthrough)
+branch  1 taken 163
+       54:   43-block  1
+call    2 returned 54
+branch  3 taken 54 (fallthrough)
+branch  4 taken 0
+       54:   43-block  2
+      163:   43-block  3
+      217:   43-block  4
+branch  5 taken 54 (fallthrough)
+branch  6 taken 163
+       54:   44:            unsigned char next = result[i + 1];
+       54:   44-block  0
+call    0 returned 54
+branch  1 taken 54 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   45:
+      54*:   46:            if (next >= 0x90 && next <= 0x9F && next != 0x81) {
+       54:   46-block  0
+branch  0 taken 54 (fallthrough)
+branch  1 taken 0
+       54:   46-block  1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 54
+    %%%%%:   46-block  2
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    #####:   47:                result[i + 1] = next + 0x20;
+    %%%%%:   47-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   48:                i++;
+    %%%%%:   48-block  0
+        -:   49:            }
+       54:   50:            else if (next == 0x81) {
+       54:   50-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 54
+    #####:   51:                result[i] = 0xD1;
+    %%%%%:   51-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   52:                result[i + 1] = 0x91;
+    %%%%%:   52-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   53:                i++;
+    %%%%%:   53-block  0
+        -:   54:            }
+       54:   55:            else if (next >= 0xA0 && next <= 0xAF) {
+       54:   55-block  0
+branch  0 taken 54 (fallthrough)
+branch  1 taken 0
+       54:   55-block  1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 54
+    #####:   56:                result[i] = 0xD1;
+    %%%%%:   56-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   57:                result[i + 1] = next - 0x20;
+    %%%%%:   57-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   58:                i++;
+    %%%%%:   58-block  0
+        -:   59:            }
+        -:   60:        }
+        -:   61:    }
+       28:   62:    return result;
+       28:   62-block  0
+       28:   62-block  1
+    =====:   63:}
+    $$$$$:   63-block  0
+call    0 never executed
+        -:   64:
+function _ZN16string_validator13remove_spacesERNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   65:void string_validator::remove_spaces(std::string& input_string) {
+    #####:   66:    size_t start_index = input_string.find_first_not_of(" \t\n\r");
+    %%%%%:   66-block  0
+call    0 never executed
+    #####:   67:    size_t end_index = input_string.find_last_not_of(" \t\n\r");
+call    0 never executed
+        -:   68:
+    #####:   69:    if (start_index == std::string::npos) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   70:        input_string = "";
+    %%%%%:   70-block  0
+call    0 never executed
+        -:   71:    } else {
+    #####:   72:        input_string = input_string.substr(start_index, end_index - start_index + 1);
+    %%%%%:   72-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   72-block  1
+call    3 never executed
+call    4 never executed
+        -:   73:    }
+    #####:   74:}
+    %%%%%:   74-block  0
+        -:   75:
+function _ZN16string_validator12extract_wordERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERS5_ called 28 returned 100% blocks executed 83%
+       28:   76:std::string string_validator::extract_word(const std::string& input_line, std::string& word_to_extract){
+       28:   77:    size_t start_index=input_line.find_first_not_of("'- \t\n\r");
+       28:   77-block  0
+call    0 returned 28
+        -:   78:    size_t end_index;
+       28:   79:    if(input_line.find_first_of(' ',start_index)==std::string::npos){
+call    0 returned 28
+branch  1 taken 15 (fallthrough)
+branch  2 taken 13
+       15:   80:        end_index=input_line.size()-1;
+       15:   80-block  0
+call    0 returned 15
+        -:   81:    } else {
+       13:   82:        end_index=input_line.find_first_of(' ',start_index)-1;
+       13:   82-block  0
+call    0 returned 13
+        -:   83:    }
+       56:   84:    word_to_extract=string_validator::to_lower(input_line.substr(start_index,
+       28:   84-block  0
+call    0 returned 28
+branch  1 taken 28 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 28
+call    4 returned 28
+    $$$$$:   84-block  1
+call    5 never executed
+    $$$$$:   84-block  2
+       56:   85:                                                                 end_index - start_index + 1));
+       28:   85-block  0
+call    0 returned 28
+branch  1 taken 28 (fallthrough)
+branch  2 taken 0 (throw)
+       28:   85-block  1
+call    3 returned 28
+       28:   86:    return input_line.substr(end_index+1);
+call    0 returned 28
+        -:   87:}
+        -:   88:
+function _ZN16string_validator15word_pair_inputERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 15 returned 87% blocks executed 72%
+       15:   89:std::pair<std::string, std::string> string_validator::word_pair_input(const std::string& input_line) {
+      15*:   90:    if (!input_line.empty() && input_line.find_first_not_of("-' \t\n\r")!=std::string::npos) {
+       15:   90-block  0
+call    0 returned 15
+branch  1 taken 15 (fallthrough)
+branch  2 taken 0
+       15:   90-block  1
+call    3 returned 15
+branch  4 taken 15 (fallthrough)
+branch  5 taken 0
+       15:   90-block  2
+    %%%%%:   90-block  3
+       15:   90-block  4
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0
+       15:   91:        std::string english;
+       15:   91-block  0
+call    0 returned 15
+       15:   92:        std::string substrated_line = extract_word(input_line, english);
+call    0 returned 15
+branch  1 taken 15 (fallthrough)
+branch  2 taken 0 (throw)
+       15:   93:        if (!string_validator::valid_english_word(english)){
+       15:   93-block  0
+call    0 returned 15
+branch  1 taken 15 (fallthrough)
+branch  2 taken 0 (throw)
+       15:   93-block  1
+branch  3 taken 2 (fallthrough)
+branch  4 taken 13
+        2:   94:            throw std::invalid_argument("Слово введено неверно");
+        2:   94-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   94-block  1
+call    4 returned 2
+    $$$$$:   94-block  2
+call    5 never executed
+        -:   95:        }
+       13:   96:        if(substrated_line.find_first_not_of("-' \t\n\r")==std::string::npos){
+       13:   96-block  0
+call    0 returned 13
+branch  1 taken 0 (fallthrough)
+branch  2 taken 13
+    #####:   97:            return {english, ""};
+    %%%%%:   97-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   98:        }
+       13:   99:        std::string russian;
+       13:   99-block  0
+call    0 returned 13
+       13:  100:        std::string substrated_line_=extract_word(substrated_line,russian);
+call    0 returned 13
+branch  1 taken 13 (fallthrough)
+branch  2 taken 0 (throw)
+       13:  101:        if (!string_validator::valid_russian_word(russian)) russian = "";
+       13:  101-block  0
+call    0 returned 13
+branch  1 taken 13 (fallthrough)
+branch  2 taken 0 (throw)
+       13:  101-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 12
+        1:  101-block  2
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+       13:  102:        return {english, russian};
+       13:  102-block  0
+call    0 returned 13
+branch  1 taken 13 (fallthrough)
+branch  2 taken 0 (throw)
+       17:  103:    } else {
+       13:  103-block  0
+call    0 returned 13
+call    1 returned 13
+       13:  103-block  1
+call    2 returned 13
+call    3 returned 13
+    $$$$$:  103-block  2
+call    4 never executed
+    $$$$$:  103-block  3
+call    5 never executed
+        2:  103-block  4
+call    6 returned 2
+        2:  103-block  5
+call    7 returned 2
+    #####:  104:        throw std::invalid_argument("Пустая строка");
+    %%%%%:  104-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:  104-block  1
+call    4 never executed
+    $$$$$:  104-block  2
+call    5 never executed
+        -:  105:    }
+        -:  106:}
+        -:  107:
+        -:  108:

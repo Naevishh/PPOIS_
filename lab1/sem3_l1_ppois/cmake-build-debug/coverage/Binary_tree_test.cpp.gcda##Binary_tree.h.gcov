@@ -1,0 +1,1798 @@
+        -:    0:Source:C:/Users/aleks/CLionProjects/sem3_l1_ppois/Dictionary/Binary_tree.h
+        -:    0:Graph:C:\Users\aleks\CLionProjects\sem3_l1_ppois\cmake-build-debug\Tests\CMakeFiles\Tests.dir\Binary_tree_test.cpp.gcno
+        -:    0:Data:C:\Users\aleks\CLionProjects\sem3_l1_ppois\cmake-build-debug\Tests\CMakeFiles\Tests.dir\Binary_tree_test.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by aleks on 18.10.2025.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef SEM3_L1_PPOIS_BINARY_TREE_H
+        -:    6:#define SEM3_L1_PPOIS_BINARY_TREE_H
+        -:    7:
+        -:    8:#include <string>
+        -:    9:#include <algorithm>
+        -:   10:#include <stdexcept>
+        -:   11:
+        -:   12:template<typename key_type, typename value_type>
+        -:   13:class binary_tree{
+        -:   14:private:
+        -:   15:    struct tree_node {
+        -:   16:        key_type key_t;
+        -:   17:        value_type value_t;
+        -:   18:        tree_node* left_child;
+        -:   19:        tree_node* right_child;
+        -:   20:        int node_height;
+        -:   21:
+    #####:   22:        tree_node(const key_type& key_t_, const value_type& value_t_)
+    #####:   23:                : key_t(key_t_), value_t(value_t_),
+    #####:   24:                  left_child(nullptr), right_child(nullptr), node_height(1) {}
+------------------
+_ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE9tree_nodeC1ERKdRKS5_:
+function _ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE9tree_nodeC1ERKdRKS5_ called 0 returned 0% blocks executed 0%
+    #####:   22:        tree_node(const key_type& key_t_, const value_type& value_t_)
+    #####:   23:                : key_t(key_t_), value_t(value_t_),
+    %%%%%:   23-block  0
+call    0 never executed
+    #####:   24:                  left_child(nullptr), right_child(nullptr), node_height(1) {}
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE9tree_nodeC1ERKS5_RKi:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE9tree_nodeC1ERKS5_RKi called 0 returned 0% blocks executed 0%
+    #####:   22:        tree_node(const key_type& key_t_, const value_type& value_t_)
+    #####:   23:                : key_t(key_t_), value_t(value_t_),
+    %%%%%:   23-block  0
+call    0 never executed
+    #####:   24:                  left_child(nullptr), right_child(nullptr), node_height(1) {}
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE9tree_nodeC1ERKiRKS5_:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE9tree_nodeC1ERKiRKS5_ called 0 returned 0% blocks executed 0%
+    #####:   22:        tree_node(const key_type& key_t_, const value_type& value_t_)
+    #####:   23:                : key_t(key_t_), value_t(value_t_),
+    %%%%%:   23-block  0
+call    0 never executed
+    #####:   24:                  left_child(nullptr), right_child(nullptr), node_height(1) {}
+------------------
+        -:   25:
+    #####:   26:        void copy_data(const tree_node* other) {
+    #####:   27:            key_t = other->key_t;
+    #####:   28:            value_t = other->value_t;
+    #####:   29:        }
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE9tree_node9copy_dataEPKS7_:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE9tree_node9copy_dataEPKS7_ called 0 returned 0% blocks executed 0%
+    #####:   26:        void copy_data(const tree_node* other) {
+    #####:   27:            key_t = other->key_t;
+    %%%%%:   27-block  0
+call    0 never executed
+    #####:   28:            value_t = other->value_t;
+    #####:   29:        }
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE9tree_node9copy_dataEPKS7_:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE9tree_node9copy_dataEPKS7_ called 0 returned 0% blocks executed 0%
+    #####:   26:        void copy_data(const tree_node* other) {
+    #####:   27:            key_t = other->key_t;
+    #####:   28:            value_t = other->value_t;
+    %%%%%:   28-block  0
+call    0 never executed
+    #####:   29:        }
+------------------
+        -:   30:    };
+        -:   31:
+        -:   32:    tree_node* tree_root;
+        -:   33:
+    #####:   34:    int get_height(tree_node* current) const {
+    #####:   35:        return current ? current->node_height : 0;
+        -:   36:    }
+------------------
+_ZNK11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE10get_heightEPNS6_9tree_nodeE:
+function _ZNK11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE10get_heightEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   34:    int get_height(tree_node* current) const {
+    #####:   35:        return current ? current->node_height : 0;
+    %%%%%:   35-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   35-block  1
+    %%%%%:   35-block  2
+    %%%%%:   35-block  3
+        -:   36:    }
+------------------
+_ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE10get_heightEPNS6_9tree_nodeE:
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE10get_heightEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   34:    int get_height(tree_node* current) const {
+    #####:   35:        return current ? current->node_height : 0;
+    %%%%%:   35-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   35-block  1
+    %%%%%:   35-block  2
+    %%%%%:   35-block  3
+        -:   36:    }
+------------------
+_ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE10get_heightEPNS6_9tree_nodeE:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE10get_heightEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   34:    int get_height(tree_node* current) const {
+    #####:   35:        return current ? current->node_height : 0;
+    %%%%%:   35-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   35-block  1
+    %%%%%:   35-block  2
+    %%%%%:   35-block  3
+        -:   36:    }
+------------------
+        -:   37:
+    #####:   38:    void update_height(tree_node* current) {
+    #####:   39:        if (current) {
+    #####:   40:            current->node_height = 1 + std::max(get_height(current->left_child), get_height(current->right_child));
+        -:   41:        }
+    #####:   42:    }
+------------------
+_ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE13update_heightEPNS6_9tree_nodeE:
+function _ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE13update_heightEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   38:    void update_height(tree_node* current) {
+    #####:   39:        if (current) {
+    %%%%%:   39-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   40:            current->node_height = 1 + std::max(get_height(current->left_child), get_height(current->right_child));
+    %%%%%:   40-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   41:        }
+    #####:   42:    }
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE13update_heightEPNS6_9tree_nodeE:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE13update_heightEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   38:    void update_height(tree_node* current) {
+    #####:   39:        if (current) {
+    %%%%%:   39-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   40:            current->node_height = 1 + std::max(get_height(current->left_child), get_height(current->right_child));
+    %%%%%:   40-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   41:        }
+    #####:   42:    }
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE13update_heightEPNS6_9tree_nodeE:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE13update_heightEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   38:    void update_height(tree_node* current) {
+    #####:   39:        if (current) {
+    %%%%%:   39-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   40:            current->node_height = 1 + std::max(get_height(current->left_child), get_height(current->right_child));
+    %%%%%:   40-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   41:        }
+    #####:   42:    }
+------------------
+        -:   43:
+    #####:   44:    int get_balance_factor(tree_node* current) {
+    #####:   45:        return current ? get_height(current->left_child) - get_height(current->right_child) : 0;
+        -:   46:    }
+------------------
+_ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE18get_balance_factorEPNS6_9tree_nodeE:
+function _ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE18get_balance_factorEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   44:    int get_balance_factor(tree_node* current) {
+    #####:   45:        return current ? get_height(current->left_child) - get_height(current->right_child) : 0;
+    %%%%%:   45-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   45-block  1
+call    2 never executed
+call    3 never executed
+    %%%%%:   45-block  2
+    %%%%%:   45-block  3
+        -:   46:    }
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE18get_balance_factorEPNS6_9tree_nodeE:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE18get_balance_factorEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   44:    int get_balance_factor(tree_node* current) {
+    #####:   45:        return current ? get_height(current->left_child) - get_height(current->right_child) : 0;
+    %%%%%:   45-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   45-block  1
+call    2 never executed
+call    3 never executed
+    %%%%%:   45-block  2
+    %%%%%:   45-block  3
+        -:   46:    }
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE18get_balance_factorEPNS6_9tree_nodeE:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE18get_balance_factorEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   44:    int get_balance_factor(tree_node* current) {
+    #####:   45:        return current ? get_height(current->left_child) - get_height(current->right_child) : 0;
+    %%%%%:   45-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   45-block  1
+call    2 never executed
+call    3 never executed
+    %%%%%:   45-block  2
+    %%%%%:   45-block  3
+        -:   46:    }
+------------------
+        -:   47:
+    #####:   48:    tree_node* right_rotate(tree_node* pivot_node) {
+    #####:   49:        tree_node *left_child = pivot_node->left_child;
+    #####:   50:        tree_node *right_subtree = left_child->right_child;
+        -:   51:
+    #####:   52:        left_child->right_child = pivot_node;
+    #####:   53:        pivot_node->left_child = right_subtree;
+        -:   54:
+    #####:   55:        update_height(pivot_node);
+    #####:   56:        update_height(left_child);
+        -:   57:
+    #####:   58:        return left_child;
+        -:   59:    }
+------------------
+_ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE12right_rotateEPNS6_9tree_nodeE:
+function _ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE12right_rotateEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   48:    tree_node* right_rotate(tree_node* pivot_node) {
+    #####:   49:        tree_node *left_child = pivot_node->left_child;
+    #####:   50:        tree_node *right_subtree = left_child->right_child;
+        -:   51:
+    #####:   52:        left_child->right_child = pivot_node;
+    #####:   53:        pivot_node->left_child = right_subtree;
+        -:   54:
+    #####:   55:        update_height(pivot_node);
+    %%%%%:   55-block  0
+call    0 never executed
+    #####:   56:        update_height(left_child);
+call    0 never executed
+        -:   57:
+    #####:   58:        return left_child;
+        -:   59:    }
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE12right_rotateEPNS6_9tree_nodeE:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE12right_rotateEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   48:    tree_node* right_rotate(tree_node* pivot_node) {
+    #####:   49:        tree_node *left_child = pivot_node->left_child;
+    #####:   50:        tree_node *right_subtree = left_child->right_child;
+        -:   51:
+    #####:   52:        left_child->right_child = pivot_node;
+    #####:   53:        pivot_node->left_child = right_subtree;
+        -:   54:
+    #####:   55:        update_height(pivot_node);
+    %%%%%:   55-block  0
+call    0 never executed
+    #####:   56:        update_height(left_child);
+call    0 never executed
+        -:   57:
+    #####:   58:        return left_child;
+        -:   59:    }
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE12right_rotateEPNS6_9tree_nodeE:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE12right_rotateEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   48:    tree_node* right_rotate(tree_node* pivot_node) {
+    #####:   49:        tree_node *left_child = pivot_node->left_child;
+    #####:   50:        tree_node *right_subtree = left_child->right_child;
+        -:   51:
+    #####:   52:        left_child->right_child = pivot_node;
+    #####:   53:        pivot_node->left_child = right_subtree;
+        -:   54:
+    #####:   55:        update_height(pivot_node);
+    %%%%%:   55-block  0
+call    0 never executed
+    #####:   56:        update_height(left_child);
+call    0 never executed
+        -:   57:
+    #####:   58:        return left_child;
+        -:   59:    }
+------------------
+        -:   60:
+    #####:   61:    tree_node* left_rotate(tree_node* pivot_node) {
+    #####:   62:        tree_node *right_child = pivot_node->right_child;
+    #####:   63:        tree_node *left_subtree = right_child->left_child;
+        -:   64:
+    #####:   65:        right_child->left_child = pivot_node;
+    #####:   66:        pivot_node->right_child = left_subtree;
+        -:   67:
+    #####:   68:        update_height(pivot_node);
+    #####:   69:        update_height(right_child);
+        -:   70:
+    #####:   71:        return right_child;
+        -:   72:    }
+------------------
+_ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE11left_rotateEPNS6_9tree_nodeE:
+function _ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE11left_rotateEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   61:    tree_node* left_rotate(tree_node* pivot_node) {
+    #####:   62:        tree_node *right_child = pivot_node->right_child;
+    #####:   63:        tree_node *left_subtree = right_child->left_child;
+        -:   64:
+    #####:   65:        right_child->left_child = pivot_node;
+    #####:   66:        pivot_node->right_child = left_subtree;
+        -:   67:
+    #####:   68:        update_height(pivot_node);
+    %%%%%:   68-block  0
+call    0 never executed
+    #####:   69:        update_height(right_child);
+call    0 never executed
+        -:   70:
+    #####:   71:        return right_child;
+        -:   72:    }
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE11left_rotateEPNS6_9tree_nodeE:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE11left_rotateEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   61:    tree_node* left_rotate(tree_node* pivot_node) {
+    #####:   62:        tree_node *right_child = pivot_node->right_child;
+    #####:   63:        tree_node *left_subtree = right_child->left_child;
+        -:   64:
+    #####:   65:        right_child->left_child = pivot_node;
+    #####:   66:        pivot_node->right_child = left_subtree;
+        -:   67:
+    #####:   68:        update_height(pivot_node);
+    %%%%%:   68-block  0
+call    0 never executed
+    #####:   69:        update_height(right_child);
+call    0 never executed
+        -:   70:
+    #####:   71:        return right_child;
+        -:   72:    }
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE11left_rotateEPNS6_9tree_nodeE:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE11left_rotateEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   61:    tree_node* left_rotate(tree_node* pivot_node) {
+    #####:   62:        tree_node *right_child = pivot_node->right_child;
+    #####:   63:        tree_node *left_subtree = right_child->left_child;
+        -:   64:
+    #####:   65:        right_child->left_child = pivot_node;
+    #####:   66:        pivot_node->right_child = left_subtree;
+        -:   67:
+    #####:   68:        update_height(pivot_node);
+    %%%%%:   68-block  0
+call    0 never executed
+    #####:   69:        update_height(right_child);
+call    0 never executed
+        -:   70:
+    #####:   71:        return right_child;
+        -:   72:    }
+------------------
+        -:   73:
+    #####:   74:    tree_node* balance(tree_node* current) {
+    #####:   75:        update_height(current);
+    #####:   76:        int balance_factor = get_balance_factor(current);
+    #####:   77:        if (balance_factor > 1 && get_balance_factor(current->left_child) >= 0)
+    #####:   78:            return right_rotate(current);
+    #####:   79:        if (balance_factor < -1 && get_balance_factor(current->right_child) <= 0)
+    #####:   80:            return left_rotate(current);
+    #####:   81:        if (balance_factor > 1 && get_balance_factor(current->left_child) < 0) {
+    #####:   82:            current->left_child = left_rotate(current->left_child);
+    #####:   83:            return right_rotate(current);
+        -:   84:        }
+    #####:   85:        if (balance_factor < -1 && get_balance_factor(current->right_child) > 0) {
+    #####:   86:            current->right_child = right_rotate(current->right_child);
+    #####:   87:            return left_rotate(current);
+        -:   88:        }
+    #####:   89:        return current;
+        -:   90:    }
+------------------
+_ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE7balanceEPNS6_9tree_nodeE:
+function _ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE7balanceEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   74:    tree_node* balance(tree_node* current) {
+    #####:   75:        update_height(current);
+    %%%%%:   75-block  0
+call    0 never executed
+    #####:   76:        int balance_factor = get_balance_factor(current);
+call    0 never executed
+    #####:   77:        if (balance_factor > 1 && get_balance_factor(current->left_child) >= 0)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   77-block  0
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:   77-block  1
+    %%%%%:   77-block  2
+    %%%%%:   77-block  3
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    #####:   78:            return right_rotate(current);
+    %%%%%:   78-block  0
+call    0 never executed
+    #####:   79:        if (balance_factor < -1 && get_balance_factor(current->right_child) <= 0)
+    %%%%%:   79-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   79-block  1
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:   79-block  2
+    %%%%%:   79-block  3
+    %%%%%:   79-block  4
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    #####:   80:            return left_rotate(current);
+    %%%%%:   80-block  0
+call    0 never executed
+    #####:   81:        if (balance_factor > 1 && get_balance_factor(current->left_child) < 0) {
+    %%%%%:   81-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   81-block  1
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:   81-block  2
+    %%%%%:   81-block  3
+    %%%%%:   81-block  4
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    #####:   82:            current->left_child = left_rotate(current->left_child);
+    %%%%%:   82-block  0
+call    0 never executed
+    #####:   83:            return right_rotate(current);
+call    0 never executed
+        -:   84:        }
+    #####:   85:        if (balance_factor < -1 && get_balance_factor(current->right_child) > 0) {
+    %%%%%:   85-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   85-block  1
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:   85-block  2
+    %%%%%:   85-block  3
+    %%%%%:   85-block  4
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    #####:   86:            current->right_child = right_rotate(current->right_child);
+    %%%%%:   86-block  0
+call    0 never executed
+    #####:   87:            return left_rotate(current);
+call    0 never executed
+        -:   88:        }
+    #####:   89:        return current;
+    %%%%%:   89-block  0
+        -:   90:    }
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE7balanceEPNS6_9tree_nodeE:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE7balanceEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   74:    tree_node* balance(tree_node* current) {
+    #####:   75:        update_height(current);
+    %%%%%:   75-block  0
+call    0 never executed
+    #####:   76:        int balance_factor = get_balance_factor(current);
+call    0 never executed
+    #####:   77:        if (balance_factor > 1 && get_balance_factor(current->left_child) >= 0)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   77-block  0
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:   77-block  1
+    %%%%%:   77-block  2
+    %%%%%:   77-block  3
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    #####:   78:            return right_rotate(current);
+    %%%%%:   78-block  0
+call    0 never executed
+    #####:   79:        if (balance_factor < -1 && get_balance_factor(current->right_child) <= 0)
+    %%%%%:   79-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   79-block  1
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:   79-block  2
+    %%%%%:   79-block  3
+    %%%%%:   79-block  4
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    #####:   80:            return left_rotate(current);
+    %%%%%:   80-block  0
+call    0 never executed
+    #####:   81:        if (balance_factor > 1 && get_balance_factor(current->left_child) < 0) {
+    %%%%%:   81-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   81-block  1
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:   81-block  2
+    %%%%%:   81-block  3
+    %%%%%:   81-block  4
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    #####:   82:            current->left_child = left_rotate(current->left_child);
+    %%%%%:   82-block  0
+call    0 never executed
+    #####:   83:            return right_rotate(current);
+call    0 never executed
+        -:   84:        }
+    #####:   85:        if (balance_factor < -1 && get_balance_factor(current->right_child) > 0) {
+    %%%%%:   85-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   85-block  1
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:   85-block  2
+    %%%%%:   85-block  3
+    %%%%%:   85-block  4
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    #####:   86:            current->right_child = right_rotate(current->right_child);
+    %%%%%:   86-block  0
+call    0 never executed
+    #####:   87:            return left_rotate(current);
+call    0 never executed
+        -:   88:        }
+    #####:   89:        return current;
+    %%%%%:   89-block  0
+        -:   90:    }
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE7balanceEPNS6_9tree_nodeE:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE7balanceEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:   74:    tree_node* balance(tree_node* current) {
+    #####:   75:        update_height(current);
+    %%%%%:   75-block  0
+call    0 never executed
+    #####:   76:        int balance_factor = get_balance_factor(current);
+call    0 never executed
+    #####:   77:        if (balance_factor > 1 && get_balance_factor(current->left_child) >= 0)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   77-block  0
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:   77-block  1
+    %%%%%:   77-block  2
+    %%%%%:   77-block  3
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    #####:   78:            return right_rotate(current);
+    %%%%%:   78-block  0
+call    0 never executed
+    #####:   79:        if (balance_factor < -1 && get_balance_factor(current->right_child) <= 0)
+    %%%%%:   79-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   79-block  1
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:   79-block  2
+    %%%%%:   79-block  3
+    %%%%%:   79-block  4
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    #####:   80:            return left_rotate(current);
+    %%%%%:   80-block  0
+call    0 never executed
+    #####:   81:        if (balance_factor > 1 && get_balance_factor(current->left_child) < 0) {
+    %%%%%:   81-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   81-block  1
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:   81-block  2
+    %%%%%:   81-block  3
+    %%%%%:   81-block  4
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    #####:   82:            current->left_child = left_rotate(current->left_child);
+    %%%%%:   82-block  0
+call    0 never executed
+    #####:   83:            return right_rotate(current);
+call    0 never executed
+        -:   84:        }
+    #####:   85:        if (balance_factor < -1 && get_balance_factor(current->right_child) > 0) {
+    %%%%%:   85-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   85-block  1
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:   85-block  2
+    %%%%%:   85-block  3
+    %%%%%:   85-block  4
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    #####:   86:            current->right_child = right_rotate(current->right_child);
+    %%%%%:   86-block  0
+call    0 never executed
+    #####:   87:            return left_rotate(current);
+call    0 never executed
+        -:   88:        }
+    #####:   89:        return current;
+    %%%%%:   89-block  0
+        -:   90:    }
+------------------
+        -:   91:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE15are_trees_equalEPKNS6_9tree_nodeES9_ called 0 returned 0% blocks executed 0%
+    #####:   92:    bool are_trees_equal(const tree_node* tree_node1, const tree_node* tree_node2) const {
+    #####:   93:        if (tree_node1 == nullptr && tree_node2 == nullptr) return true;
+    %%%%%:   93-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   93-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    %%%%%:   93-block  2
+    #####:   94:        if (tree_node1 == nullptr || tree_node2 == nullptr) return false;
+    %%%%%:   94-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   94-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    %%%%%:   94-block  2
+        -:   95:
+    #####:   96:        if (tree_node1->key_t != tree_node2->key_t || tree_node1->value_t != tree_node2->value_t) {
+    %%%%%:   96-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   96-block  1
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:   96-block  2
+    %%%%%:   96-block  3
+    %%%%%:   96-block  4
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    #####:   97:            return false;
+    %%%%%:   97-block  0
+        -:   98:        }
+        -:   99:
+    #####:  100:        return are_trees_equal(tree_node1->left_child, tree_node2->left_child) &&
+    %%%%%:  100-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:  100-block  1
+    %%%%%:  100-block  2
+    #####:  101:               are_trees_equal(tree_node1->right_child, tree_node2->right_child);
+    %%%%%:  101-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:  101-block  1
+        -:  102:    }
+        -:  103:
+    #####:  104:    tree_node* search_node(const key_type& input_key) const {
+    #####:  105:        tree_node *current = tree_root;
+    #####:  106:        while (current) {
+    #####:  107:            if (input_key == current->key_t) return current;
+    #####:  108:            else if (input_key > current->key_t) current = current->right_child;
+    #####:  109:            else current = current->left_child;
+        -:  110:        }
+    #####:  111:        return nullptr;
+        -:  112:    }
+------------------
+_ZNK11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE11search_nodeERKd:
+function _ZNK11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE11search_nodeERKd called 0 returned 0% blocks executed 0%
+    #####:  104:    tree_node* search_node(const key_type& input_key) const {
+    #####:  105:        tree_node *current = tree_root;
+    #####:  106:        while (current) {
+    %%%%%:  106-block  0
+    %%%%%:  106-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:  107:            if (input_key == current->key_t) return current;
+    %%%%%:  107-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  107-block  1
+    #####:  108:            else if (input_key > current->key_t) current = current->right_child;
+    %%%%%:  108-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  108-block  1
+    #####:  109:            else current = current->left_child;
+    %%%%%:  109-block  0
+        -:  110:        }
+    #####:  111:        return nullptr;
+    %%%%%:  111-block  0
+        -:  112:    }
+------------------
+_ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE11search_nodeERKS5_:
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE11search_nodeERKS5_ called 0 returned 0% blocks executed 0%
+    #####:  104:    tree_node* search_node(const key_type& input_key) const {
+    #####:  105:        tree_node *current = tree_root;
+    #####:  106:        while (current) {
+    %%%%%:  106-block  0
+    %%%%%:  106-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:  107:            if (input_key == current->key_t) return current;
+    %%%%%:  107-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:  107-block  1
+    #####:  108:            else if (input_key > current->key_t) current = current->right_child;
+    %%%%%:  108-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:  108-block  1
+    #####:  109:            else current = current->left_child;
+    %%%%%:  109-block  0
+        -:  110:        }
+    #####:  111:        return nullptr;
+    %%%%%:  111-block  0
+        -:  112:    }
+------------------
+_ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE11search_nodeERKi:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE11search_nodeERKi called 0 returned 0% blocks executed 0%
+    #####:  104:    tree_node* search_node(const key_type& input_key) const {
+    #####:  105:        tree_node *current = tree_root;
+    #####:  106:        while (current) {
+    %%%%%:  106-block  0
+    %%%%%:  106-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:  107:            if (input_key == current->key_t) return current;
+    %%%%%:  107-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  107-block  1
+    #####:  108:            else if (input_key > current->key_t) current = current->right_child;
+    %%%%%:  108-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  108-block  1
+    #####:  109:            else current = current->left_child;
+    %%%%%:  109-block  0
+        -:  110:        }
+    #####:  111:        return nullptr;
+    %%%%%:  111-block  0
+        -:  112:    }
+------------------
+        -:  113:
+    #####:  114:    tree_node* insert_node(tree_node* current,const key_type& input_key, const value_type& input_value) {
+    #####:  115:        if (!current) return new tree_node(input_key, input_value);
+    #####:  116:        if (input_key < current->key_t) current->left_child = insert_node(current->left_child, input_key, input_value);
+    #####:  117:        else current->right_child = insert_node(current->right_child,  input_key, input_value);
+    #####:  118:        update_height(current);
+    #####:  119:        return balance(current);
+        -:  120:    }
+------------------
+_ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE11insert_nodeEPNS6_9tree_nodeERKdRKS5_:
+function _ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE11insert_nodeEPNS6_9tree_nodeERKdRKS5_ called 0 returned 0% blocks executed 0%
+    #####:  114:    tree_node* insert_node(tree_node* current,const key_type& input_key, const value_type& input_value) {
+    #####:  115:        if (!current) return new tree_node(input_key, input_value);
+    %%%%%:  115-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  115-block  1
+call    2 never executed
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  115-block  2
+    $$$$$:  115-block  3
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  115-block  4
+call    8 never executed
+    #####:  116:        if (input_key < current->key_t) current->left_child = insert_node(current->left_child, input_key, input_value);
+    %%%%%:  116-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  116-block  1
+call    2 never executed
+    #####:  117:        else current->right_child = insert_node(current->right_child,  input_key, input_value);
+    %%%%%:  117-block  0
+call    0 never executed
+    #####:  118:        update_height(current);
+    %%%%%:  118-block  0
+call    0 never executed
+    #####:  119:        return balance(current);
+call    0 never executed
+        -:  120:    }
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE11insert_nodeEPNS6_9tree_nodeERKS5_RKi:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE11insert_nodeEPNS6_9tree_nodeERKS5_RKi called 0 returned 0% blocks executed 0%
+    #####:  114:    tree_node* insert_node(tree_node* current,const key_type& input_key, const value_type& input_value) {
+    #####:  115:        if (!current) return new tree_node(input_key, input_value);
+    %%%%%:  115-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  115-block  1
+call    2 never executed
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  115-block  2
+    $$$$$:  115-block  3
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  115-block  4
+call    8 never executed
+    #####:  116:        if (input_key < current->key_t) current->left_child = insert_node(current->left_child, input_key, input_value);
+    %%%%%:  116-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:  116-block  1
+call    3 never executed
+    #####:  117:        else current->right_child = insert_node(current->right_child,  input_key, input_value);
+    %%%%%:  117-block  0
+call    0 never executed
+    #####:  118:        update_height(current);
+    %%%%%:  118-block  0
+call    0 never executed
+    #####:  119:        return balance(current);
+call    0 never executed
+        -:  120:    }
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE11insert_nodeEPNS6_9tree_nodeERKiRKS5_:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE11insert_nodeEPNS6_9tree_nodeERKiRKS5_ called 0 returned 0% blocks executed 0%
+    #####:  114:    tree_node* insert_node(tree_node* current,const key_type& input_key, const value_type& input_value) {
+    #####:  115:        if (!current) return new tree_node(input_key, input_value);
+    %%%%%:  115-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  115-block  1
+call    2 never executed
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  115-block  2
+    $$$$$:  115-block  3
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  115-block  4
+call    8 never executed
+    #####:  116:        if (input_key < current->key_t) current->left_child = insert_node(current->left_child, input_key, input_value);
+    %%%%%:  116-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  116-block  1
+call    2 never executed
+    #####:  117:        else current->right_child = insert_node(current->right_child,  input_key, input_value);
+    %%%%%:  117-block  0
+call    0 never executed
+    #####:  118:        update_height(current);
+    %%%%%:  118-block  0
+call    0 never executed
+    #####:  119:        return balance(current);
+call    0 never executed
+        -:  120:    }
+------------------
+        -:  121:
+    #####:  122:    tree_node* delete_simple_node(tree_node* current) {
+    #####:  123:        tree_node *temporary = current->left_child ? current->left_child : current->right_child;
+    #####:  124:        if (!temporary) {
+    #####:  125:            temporary = current;
+    #####:  126:            current = nullptr;
+    #####:  127:        } else *current = *temporary;
+    #####:  128:        delete temporary;
+    #####:  129:        return current;
+        -:  130:    }
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE18delete_simple_nodeEPNS6_9tree_nodeE:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE18delete_simple_nodeEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:  122:    tree_node* delete_simple_node(tree_node* current) {
+    #####:  123:        tree_node *temporary = current->left_child ? current->left_child : current->right_child;
+    %%%%%:  123-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  123-block  1
+    %%%%%:  123-block  2
+    #####:  124:        if (!temporary) {
+    %%%%%:  124-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  125:            temporary = current;
+    #####:  126:            current = nullptr;
+    %%%%%:  126-block  0
+    #####:  127:        } else *current = *temporary;
+    %%%%%:  127-block  0
+call    0 never executed
+    #####:  128:        delete temporary;
+    %%%%%:  128-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  128-block  1
+call    2 never executed
+call    3 never executed
+    #####:  129:        return current;
+    %%%%%:  129-block  0
+        -:  130:    }
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE18delete_simple_nodeEPNS6_9tree_nodeE:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE18delete_simple_nodeEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:  122:    tree_node* delete_simple_node(tree_node* current) {
+    #####:  123:        tree_node *temporary = current->left_child ? current->left_child : current->right_child;
+    %%%%%:  123-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  123-block  1
+    %%%%%:  123-block  2
+    #####:  124:        if (!temporary) {
+    %%%%%:  124-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  125:            temporary = current;
+    #####:  126:            current = nullptr;
+    %%%%%:  126-block  0
+    #####:  127:        } else *current = *temporary;
+    %%%%%:  127-block  0
+call    0 never executed
+    #####:  128:        delete temporary;
+    %%%%%:  128-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  128-block  1
+call    2 never executed
+call    3 never executed
+    #####:  129:        return current;
+    %%%%%:  129-block  0
+        -:  130:    }
+------------------
+        -:  131:
+    #####:  132:    tree_node* delete_node(tree_node* current, const key_type& input_key) {
+    #####:  133:        if (!current) return nullptr;
+    #####:  134:        if (input_key < current->key_t) current->left_child = delete_node(current->left_child, input_key);
+    #####:  135:        else if (input_key > current->key_t) current->right_child = delete_node(current->right_child, input_key);
+        -:  136:        else {
+    #####:  137:            if (!current->left_child || !current->right_child) {
+    #####:  138:                current = delete_simple_node(current);
+        -:  139:            } else {
+    #####:  140:                tree_node *temporary = current->right_child;
+    #####:  141:                while (temporary->left_child) {
+    #####:  142:                    temporary = temporary->left_child;
+        -:  143:                }
+    #####:  144:                current->copy_data(temporary);
+    #####:  145:                current->right_child = delete_node(current->right_child, temporary->key_t);
+        -:  146:            }
+        -:  147:        }
+    #####:  148:        update_height(current);
+    #####:  149:        return balance(current);
+        -:  150:    }
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE11delete_nodeEPNS6_9tree_nodeERKS5_:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE11delete_nodeEPNS6_9tree_nodeERKS5_ called 0 returned 0% blocks executed 0%
+    #####:  132:    tree_node* delete_node(tree_node* current, const key_type& input_key) {
+    #####:  133:        if (!current) return nullptr;
+    %%%%%:  133-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  133-block  1
+    #####:  134:        if (input_key < current->key_t) current->left_child = delete_node(current->left_child, input_key);
+    %%%%%:  134-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:  134-block  1
+call    3 never executed
+    #####:  135:        else if (input_key > current->key_t) current->right_child = delete_node(current->right_child, input_key);
+    %%%%%:  135-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:  135-block  1
+call    3 never executed
+        -:  136:        else {
+    #####:  137:            if (!current->left_child || !current->right_child) {
+    %%%%%:  137-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  137-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    #####:  138:                current = delete_simple_node(current);
+    %%%%%:  138-block  0
+call    0 never executed
+        -:  139:            } else {
+    #####:  140:                tree_node *temporary = current->right_child;
+    #####:  141:                while (temporary->left_child) {
+    %%%%%:  141-block  0
+    %%%%%:  141-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:  142:                    temporary = temporary->left_child;
+    %%%%%:  142-block  0
+        -:  143:                }
+    #####:  144:                current->copy_data(temporary);
+    %%%%%:  144-block  0
+call    0 never executed
+    #####:  145:                current->right_child = delete_node(current->right_child, temporary->key_t);
+call    0 never executed
+        -:  146:            }
+        -:  147:        }
+    #####:  148:        update_height(current);
+    %%%%%:  148-block  0
+call    0 never executed
+    #####:  149:        return balance(current);
+call    0 never executed
+        -:  150:    }
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE11delete_nodeEPNS6_9tree_nodeERKi:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE11delete_nodeEPNS6_9tree_nodeERKi called 0 returned 0% blocks executed 0%
+    #####:  132:    tree_node* delete_node(tree_node* current, const key_type& input_key) {
+    #####:  133:        if (!current) return nullptr;
+    %%%%%:  133-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  133-block  1
+    #####:  134:        if (input_key < current->key_t) current->left_child = delete_node(current->left_child, input_key);
+    %%%%%:  134-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  134-block  1
+call    2 never executed
+    #####:  135:        else if (input_key > current->key_t) current->right_child = delete_node(current->right_child, input_key);
+    %%%%%:  135-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  135-block  1
+call    2 never executed
+        -:  136:        else {
+    #####:  137:            if (!current->left_child || !current->right_child) {
+    %%%%%:  137-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  137-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    #####:  138:                current = delete_simple_node(current);
+    %%%%%:  138-block  0
+call    0 never executed
+        -:  139:            } else {
+    #####:  140:                tree_node *temporary = current->right_child;
+    #####:  141:                while (temporary->left_child) {
+    %%%%%:  141-block  0
+    %%%%%:  141-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:  142:                    temporary = temporary->left_child;
+    %%%%%:  142-block  0
+        -:  143:                }
+    #####:  144:                current->copy_data(temporary);
+    %%%%%:  144-block  0
+call    0 never executed
+    #####:  145:                current->right_child = delete_node(current->right_child, temporary->key_t);
+call    0 never executed
+        -:  146:            }
+        -:  147:        }
+    #####:  148:        update_height(current);
+    %%%%%:  148-block  0
+call    0 never executed
+    #####:  149:        return balance(current);
+call    0 never executed
+        -:  150:    }
+------------------
+        -:  151:
+    #####:  152:    void clear_helper(tree_node* current){
+    #####:  153:        if(!current) return;
+    #####:  154:        clear_helper(current->left_child);
+    #####:  155:        clear_helper(current->right_child);
+    #####:  156:        delete current;
+        -:  157:    }
+------------------
+_ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE12clear_helperEPNS6_9tree_nodeE:
+function _ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE12clear_helperEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:  152:    void clear_helper(tree_node* current){
+    #####:  153:        if(!current) return;
+    %%%%%:  153-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  153-block  1
+    #####:  154:        clear_helper(current->left_child);
+    %%%%%:  154-block  0
+call    0 never executed
+    #####:  155:        clear_helper(current->right_child);
+call    0 never executed
+    #####:  156:        delete current;
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  156-block  0
+call    2 never executed
+call    3 never executed
+        -:  157:    }
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE12clear_helperEPNS6_9tree_nodeE:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE12clear_helperEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:  152:    void clear_helper(tree_node* current){
+    #####:  153:        if(!current) return;
+    %%%%%:  153-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  153-block  1
+    #####:  154:        clear_helper(current->left_child);
+    %%%%%:  154-block  0
+call    0 never executed
+    #####:  155:        clear_helper(current->right_child);
+call    0 never executed
+    #####:  156:        delete current;
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  156-block  0
+call    2 never executed
+call    3 never executed
+        -:  157:    }
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE12clear_helperEPNS6_9tree_nodeE:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE12clear_helperEPNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:  152:    void clear_helper(tree_node* current){
+    #####:  153:        if(!current) return;
+    %%%%%:  153-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  153-block  1
+    #####:  154:        clear_helper(current->left_child);
+    %%%%%:  154-block  0
+call    0 never executed
+    #####:  155:        clear_helper(current->right_child);
+call    0 never executed
+    #####:  156:        delete current;
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  156-block  0
+call    2 never executed
+call    3 never executed
+        -:  157:    }
+------------------
+        -:  158:
+    #####:  159:    void clear_tree(){
+    #####:  160:        if (tree_root) {
+    #####:  161:            clear_helper(tree_root);
+    #####:  162:            tree_root=nullptr;
+        -:  163:        }
+    #####:  164:    }
+------------------
+_ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE10clear_treeEv:
+function _ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE10clear_treeEv called 0 returned 0% blocks executed 0%
+    #####:  159:    void clear_tree(){
+    #####:  160:        if (tree_root) {
+    %%%%%:  160-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  161:            clear_helper(tree_root);
+    %%%%%:  161-block  0
+call    0 never executed
+    #####:  162:            tree_root=nullptr;
+        -:  163:        }
+    #####:  164:    }
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE10clear_treeEv:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE10clear_treeEv called 0 returned 0% blocks executed 0%
+    #####:  159:    void clear_tree(){
+    #####:  160:        if (tree_root) {
+    %%%%%:  160-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  161:            clear_helper(tree_root);
+    %%%%%:  161-block  0
+call    0 never executed
+    #####:  162:            tree_root=nullptr;
+        -:  163:        }
+    #####:  164:    }
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE10clear_treeEv:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE10clear_treeEv called 0 returned 0% blocks executed 0%
+    #####:  159:    void clear_tree(){
+    #####:  160:        if (tree_root) {
+    %%%%%:  160-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  161:            clear_helper(tree_root);
+    %%%%%:  161-block  0
+call    0 never executed
+    #####:  162:            tree_root=nullptr;
+        -:  163:        }
+    #####:  164:    }
+------------------
+        -:  165:
+    #####:  166:    int tree_size(tree_node* current, int& counter) const {
+    #####:  167:        if (current) {
+    #####:  168:            counter++;
+    #####:  169:            if (current->left_child || current->right_child) {
+    #####:  170:                counter = tree_size(current->left_child, counter);
+    #####:  171:                counter = tree_size(current->right_child, counter);
+        -:  172:            }
+        -:  173:        }
+    #####:  174:        return counter;
+        -:  175:    }
+------------------
+_ZNK11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE9tree_sizeEPNS6_9tree_nodeERi:
+function _ZNK11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE9tree_sizeEPNS6_9tree_nodeERi called 0 returned 0% blocks executed 0%
+    #####:  166:    int tree_size(tree_node* current, int& counter) const {
+    #####:  167:        if (current) {
+    %%%%%:  167-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  168:            counter++;
+    #####:  169:            if (current->left_child || current->right_child) {
+    %%%%%:  169-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  169-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    #####:  170:                counter = tree_size(current->left_child, counter);
+    %%%%%:  170-block  0
+call    0 never executed
+    #####:  171:                counter = tree_size(current->right_child, counter);
+call    0 never executed
+        -:  172:            }
+        -:  173:        }
+    #####:  174:        return counter;
+    %%%%%:  174-block  0
+        -:  175:    }
+------------------
+_ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE9tree_sizeEPNS6_9tree_nodeERi:
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE9tree_sizeEPNS6_9tree_nodeERi called 0 returned 0% blocks executed 0%
+    #####:  166:    int tree_size(tree_node* current, int& counter) const {
+    #####:  167:        if (current) {
+    %%%%%:  167-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  168:            counter++;
+    #####:  169:            if (current->left_child || current->right_child) {
+    %%%%%:  169-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  169-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    #####:  170:                counter = tree_size(current->left_child, counter);
+    %%%%%:  170-block  0
+call    0 never executed
+    #####:  171:                counter = tree_size(current->right_child, counter);
+call    0 never executed
+        -:  172:            }
+        -:  173:        }
+    #####:  174:        return counter;
+    %%%%%:  174-block  0
+        -:  175:    }
+------------------
+_ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE9tree_sizeEPNS6_9tree_nodeERi:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE9tree_sizeEPNS6_9tree_nodeERi called 0 returned 0% blocks executed 0%
+    #####:  166:    int tree_size(tree_node* current, int& counter) const {
+    #####:  167:        if (current) {
+    %%%%%:  167-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  168:            counter++;
+    #####:  169:            if (current->left_child || current->right_child) {
+    %%%%%:  169-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  169-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    #####:  170:                counter = tree_size(current->left_child, counter);
+    %%%%%:  170-block  0
+call    0 never executed
+    #####:  171:                counter = tree_size(current->right_child, counter);
+call    0 never executed
+        -:  172:            }
+        -:  173:        }
+    #####:  174:        return counter;
+    %%%%%:  174-block  0
+        -:  175:    }
+------------------
+        -:  176:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE9copy_treeEPKNS6_9tree_nodeE called 0 returned 0% blocks executed 0%
+    #####:  177:    tree_node* copy_tree(const tree_node* current) {
+    #####:  178:        if (!current) return nullptr;
+    %%%%%:  178-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  178-block  1
+    #####:  179:        tree_node *new_node = new tree_node(current->key_t, current->value_t);
+    %%%%%:  179-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    $$$$$:  179-block  1
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  179-block  2
+call    6 never executed
+    #####:  180:        new_node->node_height = current->node_height;
+    #####:  181:        new_node->left_child = copy_tree(current->left_child);
+    %%%%%:  181-block  0
+call    0 never executed
+    #####:  182:        new_node->right_child = copy_tree(current->right_child);
+call    0 never executed
+    #####:  183:        return new_node;
+        -:  184:    }
+        -:  185:
+        -:  186:    template<typename function>
+    #####:  187:    void inorder_traverse_helper(tree_node* current, function& function_) const {
+    #####:  188:        if (!current) return;
+    #####:  189:        inorder_traverse_helper(current->left_child, function_);
+    #####:  190:        function_(current->key_t, current->value_t);
+    #####:  191:        inorder_traverse_helper(current->right_child, function_);
+        -:  192:    }
+------------------
+_ZNK11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE23inorder_traverse_helperIZN43BinaryTreeDifferentTypesTest_DoubleKey_Test8TestBodyEvEUldRKS5_E_EEvPNS6_9tree_nodeERT_:
+function _ZNK11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE23inorder_traverse_helperIZN43BinaryTreeDifferentTypesTest_DoubleKey_Test8TestBodyEvEUldRKS5_E_EEvPNS6_9tree_nodeERT_ called 0 returned 0% blocks executed 0%
+    #####:  187:    void inorder_traverse_helper(tree_node* current, function& function_) const {
+    #####:  188:        if (!current) return;
+    %%%%%:  188-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  188-block  1
+    #####:  189:        inorder_traverse_helper(current->left_child, function_);
+    %%%%%:  189-block  0
+call    0 never executed
+    #####:  190:        function_(current->key_t, current->value_t);
+call    0 never executed
+    #####:  191:        inorder_traverse_helper(current->right_child, function_);
+call    0 never executed
+        -:  192:    }
+------------------
+_ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE23inorder_traverse_helperIZN45BinaryTreeTest_ComplexOperationsSequence_Test8TestBodyEvEUliRKS5_E_EEvPNS6_9tree_nodeERT_:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE23inorder_traverse_helperIZN45BinaryTreeTest_ComplexOperationsSequence_Test8TestBodyEvEUliRKS5_E_EEvPNS6_9tree_nodeERT_ called 0 returned 0% blocks executed 0%
+    #####:  187:    void inorder_traverse_helper(tree_node* current, function& function_) const {
+    #####:  188:        if (!current) return;
+    %%%%%:  188-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  188-block  1
+    #####:  189:        inorder_traverse_helper(current->left_child, function_);
+    %%%%%:  189-block  0
+call    0 never executed
+    #####:  190:        function_(current->key_t, current->value_t);
+call    0 never executed
+    #####:  191:        inorder_traverse_helper(current->right_child, function_);
+call    0 never executed
+        -:  192:    }
+------------------
+_ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE23inorder_traverse_helperIZN33BinaryTreeTest_TreeBalancing_Test8TestBodyEvEUliRKS5_E_EEvPNS6_9tree_nodeERT_:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE23inorder_traverse_helperIZN33BinaryTreeTest_TreeBalancing_Test8TestBodyEvEUliRKS5_E_EEvPNS6_9tree_nodeERT_ called 0 returned 0% blocks executed 0%
+    #####:  187:    void inorder_traverse_helper(tree_node* current, function& function_) const {
+    #####:  188:        if (!current) return;
+    %%%%%:  188-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  188-block  1
+    #####:  189:        inorder_traverse_helper(current->left_child, function_);
+    %%%%%:  189-block  0
+call    0 never executed
+    #####:  190:        function_(current->key_t, current->value_t);
+call    0 never executed
+    #####:  191:        inorder_traverse_helper(current->right_child, function_);
+call    0 never executed
+        -:  192:    }
+------------------
+_ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE23inorder_traverse_helperIZN41BinaryTreeTest_InorderTraversalEmpty_Test8TestBodyEvEUliRKS5_E_EEvPNS6_9tree_nodeERT_:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE23inorder_traverse_helperIZN41BinaryTreeTest_InorderTraversalEmpty_Test8TestBodyEvEUliRKS5_E_EEvPNS6_9tree_nodeERT_ called 0 returned 0% blocks executed 0%
+    #####:  187:    void inorder_traverse_helper(tree_node* current, function& function_) const {
+    #####:  188:        if (!current) return;
+    %%%%%:  188-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  188-block  1
+    #####:  189:        inorder_traverse_helper(current->left_child, function_);
+    %%%%%:  189-block  0
+call    0 never executed
+    #####:  190:        function_(current->key_t, current->value_t);
+call    0 never executed
+    #####:  191:        inorder_traverse_helper(current->right_child, function_);
+call    0 never executed
+        -:  192:    }
+------------------
+_ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE23inorder_traverse_helperIZN36BinaryTreeTest_InorderTraversal_Test8TestBodyEvEUliRKS5_E_EEvPNS6_9tree_nodeERT_:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE23inorder_traverse_helperIZN36BinaryTreeTest_InorderTraversal_Test8TestBodyEvEUliRKS5_E_EEvPNS6_9tree_nodeERT_ called 0 returned 0% blocks executed 0%
+    #####:  187:    void inorder_traverse_helper(tree_node* current, function& function_) const {
+    #####:  188:        if (!current) return;
+    %%%%%:  188-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  188-block  1
+    #####:  189:        inorder_traverse_helper(current->left_child, function_);
+    %%%%%:  189-block  0
+call    0 never executed
+    #####:  190:        function_(current->key_t, current->value_t);
+call    0 never executed
+    #####:  191:        inorder_traverse_helper(current->right_child, function_);
+call    0 never executed
+        -:  192:    }
+------------------
+        -:  193:
+        -:  194:public:
+    #####:  195:    binary_tree() : tree_root(nullptr) {}
+------------------
+_ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC1Ev:
+function _ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC1Ev called 0 returned 0% blocks executed 0%
+    #####:  195:    binary_tree() : tree_root(nullptr) {}
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEC1Ev:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEC1Ev called 0 returned 0% blocks executed 0%
+    #####:  195:    binary_tree() : tree_root(nullptr) {}
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC1Ev:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC1Ev called 0 returned 0% blocks executed 0%
+    #####:  195:    binary_tree() : tree_root(nullptr) {}
+------------------
+        -:  196:
+    #####:  197:    ~binary_tree() {
+    #####:  198:        clear_tree();
+    #####:  199:    }
+------------------
+_ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED1Ev:
+function _ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED1Ev called 0 returned 0% blocks executed 0%
+    #####:  197:    ~binary_tree() {
+    #####:  198:        clear_tree();
+    %%%%%:  198-block  0
+call    0 never executed
+    #####:  199:    }
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiED1Ev:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiED1Ev called 0 returned 0% blocks executed 0%
+    #####:  197:    ~binary_tree() {
+    #####:  198:        clear_tree();
+    %%%%%:  198-block  0
+call    0 never executed
+    #####:  199:    }
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED1Ev:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED1Ev called 0 returned 0% blocks executed 0%
+    #####:  197:    ~binary_tree() {
+    #####:  198:        clear_tree();
+    %%%%%:  198-block  0
+call    0 never executed
+    #####:  199:    }
+------------------
+        -:  200:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC1ERKS6_ called 0 returned 0% blocks executed 0%
+    #####:  201:    binary_tree(const binary_tree& other) : tree_root(nullptr) {
+    #####:  202:        if (other.tree_root) {
+    %%%%%:  202-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  203:            tree_root = copy_tree(other.tree_root);
+    %%%%%:  203-block  0
+call    0 never executed
+        -:  204:        }
+    #####:  205:    }
+        -:  206:
+        -:  207:    template<typename function>
+    #####:  208:    void inorder_traverse(function function_) const {
+    #####:  209:        inorder_traverse_helper(tree_root, function_);
+    #####:  210:    }
+------------------
+_ZNK11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE16inorder_traverseIZN43BinaryTreeDifferentTypesTest_DoubleKey_Test8TestBodyEvEUldRKS5_E_EEvT_:
+function _ZNK11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE16inorder_traverseIZN43BinaryTreeDifferentTypesTest_DoubleKey_Test8TestBodyEvEUldRKS5_E_EEvT_ called 0 returned 0% blocks executed 0%
+    #####:  208:    void inorder_traverse(function function_) const {
+    #####:  209:        inorder_traverse_helper(tree_root, function_);
+    %%%%%:  209-block  0
+call    0 never executed
+    #####:  210:    }
+------------------
+_ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE16inorder_traverseIZN45BinaryTreeTest_ComplexOperationsSequence_Test8TestBodyEvEUliRKS5_E_EEvT_:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE16inorder_traverseIZN45BinaryTreeTest_ComplexOperationsSequence_Test8TestBodyEvEUliRKS5_E_EEvT_ called 0 returned 0% blocks executed 0%
+    #####:  208:    void inorder_traverse(function function_) const {
+    #####:  209:        inorder_traverse_helper(tree_root, function_);
+    %%%%%:  209-block  0
+call    0 never executed
+    #####:  210:    }
+------------------
+_ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE16inorder_traverseIZN33BinaryTreeTest_TreeBalancing_Test8TestBodyEvEUliRKS5_E_EEvT_:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE16inorder_traverseIZN33BinaryTreeTest_TreeBalancing_Test8TestBodyEvEUliRKS5_E_EEvT_ called 0 returned 0% blocks executed 0%
+    #####:  208:    void inorder_traverse(function function_) const {
+    #####:  209:        inorder_traverse_helper(tree_root, function_);
+    %%%%%:  209-block  0
+call    0 never executed
+    #####:  210:    }
+------------------
+_ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE16inorder_traverseIZN41BinaryTreeTest_InorderTraversalEmpty_Test8TestBodyEvEUliRKS5_E_EEvT_:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE16inorder_traverseIZN41BinaryTreeTest_InorderTraversalEmpty_Test8TestBodyEvEUliRKS5_E_EEvT_ called 0 returned 0% blocks executed 0%
+    #####:  208:    void inorder_traverse(function function_) const {
+    #####:  209:        inorder_traverse_helper(tree_root, function_);
+    %%%%%:  209-block  0
+call    0 never executed
+    #####:  210:    }
+------------------
+_ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE16inorder_traverseIZN36BinaryTreeTest_InorderTraversal_Test8TestBodyEvEUliRKS5_E_EEvT_:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE16inorder_traverseIZN36BinaryTreeTest_InorderTraversal_Test8TestBodyEvEUliRKS5_E_EEvT_ called 0 returned 0% blocks executed 0%
+    #####:  208:    void inorder_traverse(function function_) const {
+    #####:  209:        inorder_traverse_helper(tree_root, function_);
+    %%%%%:  209-block  0
+call    0 never executed
+    #####:  210:    }
+------------------
+        -:  211:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEaSERKS6_ called 0 returned 0% blocks executed 0%
+    #####:  212:    binary_tree& operator=(const binary_tree& other) {
+    #####:  213:        if (this != &other) {
+    %%%%%:  213-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  214:            clear_tree();
+    %%%%%:  214-block  0
+call    0 never executed
+    #####:  215:            this->tree_root = copy_tree(other.tree_root);
+call    0 never executed
+        -:  216:        }
+    #####:  217:        return *this;
+    %%%%%:  217-block  0
+        -:  218:    }
+        -:  219:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE13get_tree_rootEv called 0 returned 0% blocks executed 0%
+    #####:  220:    tree_node* get_tree_root() const {
+    #####:  221:        return tree_root;
+    %%%%%:  221-block  0
+        -:  222:    }
+        -:  223:
+        -:  224:    void set_tree_root(tree_node* new_root) {
+        -:  225:        tree_root = new_root;
+        -:  226:    }
+        -:  227:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEeqERKS6_ called 0 returned 0% blocks executed 0%
+    #####:  228:    bool operator==(const binary_tree& other) const {
+    #####:  229:        return are_trees_equal(tree_root, other.tree_root);
+    %%%%%:  229-block  0
+call    0 never executed
+        -:  230:    }
+        -:  231:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEneERKS6_ called 0 returned 0% blocks executed 0%
+    #####:  232:    bool operator!=(const binary_tree& other) const {
+    #####:  233:        return !(*this == other);
+    %%%%%:  233-block  0
+call    0 never executed
+        -:  234:    }
+        -:  235:
+    #####:  236:    bool insert_helper(const key_type& key_to_insert, const value_type& value_to_insert) {
+    #####:  237:        if(search_node(key_to_insert)) return false;
+    #####:  238:        tree_root = insert_node(tree_root, key_to_insert, value_to_insert);
+    #####:  239:        return true;
+        -:  240:    }
+------------------
+_ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE13insert_helperERKdRKS5_:
+function _ZN11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE13insert_helperERKdRKS5_ called 0 returned 0% blocks executed 0%
+    #####:  236:    bool insert_helper(const key_type& key_to_insert, const value_type& value_to_insert) {
+    #####:  237:        if(search_node(key_to_insert)) return false;
+    %%%%%:  237-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:  237-block  1
+    #####:  238:        tree_root = insert_node(tree_root, key_to_insert, value_to_insert);
+    %%%%%:  238-block  0
+call    0 never executed
+    #####:  239:        return true;
+        -:  240:    }
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE13insert_helperERKS5_RKi:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE13insert_helperERKS5_RKi called 0 returned 0% blocks executed 0%
+    #####:  236:    bool insert_helper(const key_type& key_to_insert, const value_type& value_to_insert) {
+    #####:  237:        if(search_node(key_to_insert)) return false;
+    %%%%%:  237-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:  237-block  1
+    #####:  238:        tree_root = insert_node(tree_root, key_to_insert, value_to_insert);
+    %%%%%:  238-block  0
+call    0 never executed
+    #####:  239:        return true;
+        -:  240:    }
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE13insert_helperERKiRKS5_:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE13insert_helperERKiRKS5_ called 0 returned 0% blocks executed 0%
+    #####:  236:    bool insert_helper(const key_type& key_to_insert, const value_type& value_to_insert) {
+    #####:  237:        if(search_node(key_to_insert)) return false;
+    %%%%%:  237-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:  237-block  1
+    #####:  238:        tree_root = insert_node(tree_root, key_to_insert, value_to_insert);
+    %%%%%:  238-block  0
+call    0 never executed
+    #####:  239:        return true;
+        -:  240:    }
+------------------
+        -:  241:
+    #####:  242:    bool delete_helper(const key_type& key_to_delete) {
+    #####:  243:        if(!search_node(key_to_delete)) return false;
+    #####:  244:        tree_root = delete_node(tree_root, key_to_delete);
+    #####:  245:        return true;
+        -:  246:    }
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE13delete_helperERKS5_:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE13delete_helperERKS5_ called 0 returned 0% blocks executed 0%
+    #####:  242:    bool delete_helper(const key_type& key_to_delete) {
+    #####:  243:        if(!search_node(key_to_delete)) return false;
+    %%%%%:  243-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:  243-block  1
+    #####:  244:        tree_root = delete_node(tree_root, key_to_delete);
+    %%%%%:  244-block  0
+call    0 never executed
+    #####:  245:        return true;
+        -:  246:    }
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE13delete_helperERKi:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE13delete_helperERKi called 0 returned 0% blocks executed 0%
+    #####:  242:    bool delete_helper(const key_type& key_to_delete) {
+    #####:  243:        if(!search_node(key_to_delete)) return false;
+    %%%%%:  243-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:  243-block  1
+    #####:  244:        tree_root = delete_node(tree_root, key_to_delete);
+    %%%%%:  244-block  0
+call    0 never executed
+    #####:  245:        return true;
+        -:  246:    }
+------------------
+        -:  247:
+    #####:  248:    int get_size() const {
+    #####:  249:        int word_counter = 0;
+    #####:  250:        int number = tree_size(tree_root, word_counter);
+    #####:  251:        return number;
+        -:  252:    }
+------------------
+_ZNK11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE8get_sizeEv:
+function _ZNK11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE8get_sizeEv called 0 returned 0% blocks executed 0%
+    #####:  248:    int get_size() const {
+    #####:  249:        int word_counter = 0;
+    #####:  250:        int number = tree_size(tree_root, word_counter);
+    %%%%%:  250-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  251:        return number;
+    %%%%%:  251-block  0
+    %%%%%:  251-block  1
+        -:  252:    }
+------------------
+_ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE8get_sizeEv:
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE8get_sizeEv called 0 returned 0% blocks executed 0%
+    #####:  248:    int get_size() const {
+    #####:  249:        int word_counter = 0;
+    #####:  250:        int number = tree_size(tree_root, word_counter);
+    %%%%%:  250-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  251:        return number;
+    %%%%%:  251-block  0
+    %%%%%:  251-block  1
+        -:  252:    }
+------------------
+_ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE8get_sizeEv:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE8get_sizeEv called 0 returned 0% blocks executed 0%
+    #####:  248:    int get_size() const {
+    #####:  249:        int word_counter = 0;
+    #####:  250:        int number = tree_size(tree_root, word_counter);
+    %%%%%:  250-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  251:        return number;
+    %%%%%:  251-block  0
+    %%%%%:  251-block  1
+        -:  252:    }
+------------------
+        -:  253:
+    #####:  254:    bool contains_node(const key_type& key_to_find) const {
+    #####:  255:        return search_node(key_to_find);
+        -:  256:    }
+------------------
+_ZNK11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE13contains_nodeERKd:
+function _ZNK11binary_treeIdNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE13contains_nodeERKd called 0 returned 0% blocks executed 0%
+    #####:  254:    bool contains_node(const key_type& key_to_find) const {
+    #####:  255:        return search_node(key_to_find);
+    %%%%%:  255-block  0
+call    0 never executed
+        -:  256:    }
+------------------
+_ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE13contains_nodeERKS5_:
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE13contains_nodeERKS5_ called 0 returned 0% blocks executed 0%
+    #####:  254:    bool contains_node(const key_type& key_to_find) const {
+    #####:  255:        return search_node(key_to_find);
+    %%%%%:  255-block  0
+call    0 never executed
+        -:  256:    }
+------------------
+_ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE13contains_nodeERKi:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE13contains_nodeERKi called 0 returned 0% blocks executed 0%
+    #####:  254:    bool contains_node(const key_type& key_to_find) const {
+    #####:  255:        return search_node(key_to_find);
+    %%%%%:  255-block  0
+call    0 never executed
+        -:  256:    }
+------------------
+        -:  257:
+        -:  258:    const value_type& get_value(const key_type& key_to_find) const {
+        -:  259:        tree_node *temporary = search_node(key_to_find);
+        -:  260:        if (temporary) return temporary->value_t;
+        -:  261:        else throw std::out_of_range("Ключ не найден.");
+        -:  262:    }
+        -:  263:
+    #####:  264:    value_type& get_value(const key_type& key_to_find) {
+    #####:  265:        tree_node *temporary = search_node(key_to_find);
+    #####:  266:        if (temporary) return temporary->value_t;
+    #####:  267:        else throw std::out_of_range("Ключ не найден.");
+        -:  268:    }
+------------------
+_ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE9get_valueERKS5_:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE9get_valueERKS5_ called 0 returned 0% blocks executed 0%
+    #####:  264:    value_type& get_value(const key_type& key_to_find) {
+    #####:  265:        tree_node *temporary = search_node(key_to_find);
+    %%%%%:  265-block  0
+call    0 never executed
+    #####:  266:        if (temporary) return temporary->value_t;
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  266-block  0
+    %%%%%:  266-block  1
+    #####:  267:        else throw std::out_of_range("Ключ не найден.");
+    %%%%%:  267-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:  267-block  1
+call    4 never executed
+    $$$$$:  267-block  2
+call    5 never executed
+        -:  268:    }
+------------------
+_ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE9get_valueERKi:
+function _ZN11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE9get_valueERKi called 0 returned 0% blocks executed 0%
+    #####:  264:    value_type& get_value(const key_type& key_to_find) {
+    #####:  265:        tree_node *temporary = search_node(key_to_find);
+    %%%%%:  265-block  0
+call    0 never executed
+    #####:  266:        if (temporary) return temporary->value_t;
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  266-block  0
+    %%%%%:  266-block  1
+    #####:  267:        else throw std::out_of_range("Ключ не найден.");
+    %%%%%:  267-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:  267-block  1
+call    4 never executed
+    $$$$$:  267-block  2
+call    5 never executed
+        -:  268:    }
+------------------
+        -:  269:
+        -:  270:    int print_dictionary(std::ostream& output, tree_node* current, int& counter) const {
+        -:  271:        if (current) {
+        -:  272:            counter = print_dictionary(output, current->left_child, counter);
+        -:  273:            counter++;
+        -:  274:            output << counter << ". ";
+        -:  275:            output << *current;
+        -:  276:            counter = print_dictionary(output, current->right_child, counter);
+        -:  277:        }
+        -:  278:        return counter;
+        -:  279:    }
+        -:  280:
+function _ZNK11binary_treeIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE10empty_treeEv called 0 returned 0% blocks executed 0%
+    #####:  281:    bool empty_tree() const {
+    #####:  282:        return !get_tree_root();
+    %%%%%:  282-block  0
+call    0 never executed
+        -:  283:    }
+        -:  284:};
+        -:  285:
+        -:  286:#endif //SEM3_L1_PPOIS_BINARY_TREE_H

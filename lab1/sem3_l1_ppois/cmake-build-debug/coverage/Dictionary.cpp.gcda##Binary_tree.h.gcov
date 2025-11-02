@@ -1,0 +1,627 @@
+        -:    0:Source:C:/Users/aleks/CLionProjects/sem3_l1_ppois/Dictionary/Binary_tree.h
+        -:    0:Graph:C:\Users\aleks\CLionProjects\sem3_l1_ppois\cmake-build-debug\Dictionary\CMakeFiles\Dictionary.dir\Dictionary.cpp.gcno
+        -:    0:Data:C:\Users\aleks\CLionProjects\sem3_l1_ppois\cmake-build-debug\Dictionary\CMakeFiles\Dictionary.dir\Dictionary.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by aleks on 18.10.2025.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef SEM3_L1_PPOIS_BINARY_TREE_H
+        -:    6:#define SEM3_L1_PPOIS_BINARY_TREE_H
+        -:    7:
+        -:    8:#include <string>
+        -:    9:#include <algorithm>
+        -:   10:#include <stdexcept>
+        -:   11:
+        -:   12:template<typename key_type, typename value_type>
+        -:   13:class binary_tree{
+        -:   14:private:
+        -:   15:    struct tree_node {
+        -:   16:        key_type key_t;
+        -:   17:        value_type value_t;
+        -:   18:        tree_node* left_child;
+        -:   19:        tree_node* right_child;
+        -:   20:        int node_height;
+        -:   21:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E9tree_nodeC1ERKS5_S9_ called 0 returned 0% blocks executed 0%
+    #####:   22:        tree_node(const key_type& key_t_, const value_type& value_t_)
+    #####:   23:                : key_t(key_t_), value_t(value_t_),
+    %%%%%:   23-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    #####:   24:                  left_child(nullptr), right_child(nullptr), node_height(1) {}
+    %%%%%:   24-block  0
+    $$$$$:   24-block  1
+call    0 never executed
+        -:   25:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E9tree_node9copy_dataEPKS7_ called 0 returned 0% blocks executed 0%
+    #####:   26:        void copy_data(const tree_node* other) {
+    #####:   27:            key_t = other->key_t;
+    %%%%%:   27-block  0
+call    0 never executed
+    #####:   28:            value_t = other->value_t;
+call    0 never executed
+    #####:   29:        }
+        -:   30:    };
+        -:   31:
+        -:   32:    tree_node* tree_root;
+        -:   33:
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E10get_heightEPNS6_9tree_nodeE called 684 returned 100% blocks executed 100%
+      684:   34:    int get_height(tree_node* current) const {
+      684:   35:        return current ? current->node_height : 0;
+      684:   35-block  0
+branch  0 taken 332 (fallthrough)
+branch  1 taken 352
+      332:   35-block  1
+      352:   35-block  2
+      684:   35-block  3
+        -:   36:    }
+        -:   37:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E13update_heightEPNS6_9tree_nodeE called 234 returned 100% blocks executed 100%
+      234:   38:    void update_height(tree_node* current) {
+      234:   39:        if (current) {
+      234:   39-block  0
+branch  0 taken 228 (fallthrough)
+branch  1 taken 6
+      228:   40:            current->node_height = 1 + std::max(get_height(current->left_child), get_height(current->right_child));
+      228:   40-block  0
+call    0 returned 228
+call    1 returned 228
+call    2 returned 228
+        -:   41:        }
+      234:   42:    }
+        -:   43:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E18get_balance_factorEPNS6_9tree_nodeE called 117 returned 100% blocks executed 100%
+      117:   44:    int get_balance_factor(tree_node* current) {
+      117:   45:        return current ? get_height(current->left_child) - get_height(current->right_child) : 0;
+      117:   45-block  0
+branch  0 taken 114 (fallthrough)
+branch  1 taken 3
+      114:   45-block  1
+call    2 returned 114
+call    3 returned 114
+        3:   45-block  2
+      117:   45-block  3
+        -:   46:    }
+        -:   47:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E12right_rotateEPNS6_9tree_nodeE called 1 returned 100% blocks executed 100%
+        1:   48:    tree_node* right_rotate(tree_node* pivot_node) {
+        1:   49:        tree_node *left_child = pivot_node->left_child;
+        1:   50:        tree_node *right_subtree = left_child->right_child;
+        -:   51:
+        1:   52:        left_child->right_child = pivot_node;
+        1:   53:        pivot_node->left_child = right_subtree;
+        -:   54:
+        1:   55:        update_height(pivot_node);
+        1:   55-block  0
+call    0 returned 1
+        1:   56:        update_height(left_child);
+call    0 returned 1
+        -:   57:
+        1:   58:        return left_child;
+        -:   59:    }
+        -:   60:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E11left_rotateEPNS6_9tree_nodeE called 9 returned 100% blocks executed 100%
+        9:   61:    tree_node* left_rotate(tree_node* pivot_node) {
+        9:   62:        tree_node *right_child = pivot_node->right_child;
+        9:   63:        tree_node *left_subtree = right_child->left_child;
+        -:   64:
+        9:   65:        right_child->left_child = pivot_node;
+        9:   66:        pivot_node->right_child = left_subtree;
+        -:   67:
+        9:   68:        update_height(pivot_node);
+        9:   68-block  0
+call    0 returned 9
+        9:   69:        update_height(right_child);
+call    0 returned 9
+        -:   70:
+        9:   71:        return right_child;
+        -:   72:    }
+        -:   73:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E7balanceEPNS6_9tree_nodeE called 107 returned 100% blocks executed 71%
+      107:   74:    tree_node* balance(tree_node* current) {
+      107:   75:        update_height(current);
+      107:   75-block  0
+call    0 returned 107
+      107:   76:        int balance_factor = get_balance_factor(current);
+call    0 returned 107
+     107*:   77:        if (balance_factor > 1 && get_balance_factor(current->left_child) >= 0)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 107
+    %%%%%:   77-block  0
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:   77-block  1
+      107:   77-block  2
+      107:   77-block  3
+branch  5 taken 0 (fallthrough)
+branch  6 taken 107
+    #####:   78:            return right_rotate(current);
+    %%%%%:   78-block  0
+call    0 never executed
+      107:   79:        if (balance_factor < -1 && get_balance_factor(current->right_child) <= 0)
+      107:   79-block  0
+branch  0 taken 9 (fallthrough)
+branch  1 taken 98
+        9:   79-block  1
+call    2 returned 9
+branch  3 taken 8 (fallthrough)
+branch  4 taken 1
+        8:   79-block  2
+       99:   79-block  3
+      107:   79-block  4
+branch  5 taken 8 (fallthrough)
+branch  6 taken 99
+        8:   80:            return left_rotate(current);
+        8:   80-block  0
+call    0 returned 8
+      99*:   81:        if (balance_factor > 1 && get_balance_factor(current->left_child) < 0) {
+       99:   81-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 99
+    %%%%%:   81-block  1
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:   81-block  2
+       99:   81-block  3
+       99:   81-block  4
+branch  5 taken 0 (fallthrough)
+branch  6 taken 99
+    #####:   82:            current->left_child = left_rotate(current->left_child);
+    %%%%%:   82-block  0
+call    0 never executed
+    #####:   83:            return right_rotate(current);
+call    0 never executed
+        -:   84:        }
+       99:   85:        if (balance_factor < -1 && get_balance_factor(current->right_child) > 0) {
+       99:   85-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 98
+        1:   85-block  1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0
+        1:   85-block  2
+       98:   85-block  3
+       99:   85-block  4
+branch  5 taken 1 (fallthrough)
+branch  6 taken 98
+        1:   86:            current->right_child = right_rotate(current->right_child);
+        1:   86-block  0
+call    0 returned 1
+        1:   87:            return left_rotate(current);
+call    0 returned 1
+        -:   88:        }
+       98:   89:        return current;
+       98:   89-block  0
+        -:   90:    }
+        -:   91:
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E15are_trees_equalEPKNS6_9tree_nodeES9_ called 15 returned 100% blocks executed 95%
+       15:   92:    bool are_trees_equal(const tree_node* tree_node1, const tree_node* tree_node2) const {
+       15:   93:        if (tree_node1 == nullptr && tree_node2 == nullptr) return true;
+       15:   93-block  0
+branch  0 taken 8 (fallthrough)
+branch  1 taken 7
+        8:   93-block  1
+branch  2 taken 7 (fallthrough)
+branch  3 taken 1
+        7:   93-block  2
+        8:   94:        if (tree_node1 == nullptr || tree_node2 == nullptr) return false;
+        8:   94-block  0
+branch  0 taken 7 (fallthrough)
+branch  1 taken 1
+        7:   94-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 6
+        2:   94-block  2
+        -:   95:
+        6:   96:        if (tree_node1->key_t != tree_node2->key_t || tree_node1->value_t != tree_node2->value_t) {
+        6:   96-block  0
+call    0 returned 6
+branch  1 taken 4 (fallthrough)
+branch  2 taken 2
+        4:   96-block  1
+call    3 returned 4
+branch  4 taken 0 (fallthrough)
+branch  5 taken 4
+        2:   96-block  2
+        4:   96-block  3
+        6:   96-block  4
+branch  6 taken 2 (fallthrough)
+branch  7 taken 4
+        2:   97:            return false;
+        2:   97-block  0
+        -:   98:        }
+        -:   99:
+       8*:  100:        return are_trees_equal(tree_node1->left_child, tree_node2->left_child) &&
+        4:  100-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0
+        4:  100-block  1
+    %%%%%:  100-block  2
+        8:  101:               are_trees_equal(tree_node1->right_child, tree_node2->right_child);
+        4:  101-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0
+        4:  101-block  1
+        -:  102:    }
+        -:  103:
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E11search_nodeERKS5_ called 242 returned 100% blocks executed 100%
+      242:  104:    tree_node* search_node(const key_type& input_key) const {
+      242:  105:        tree_node *current = tree_root;
+      383:  106:        while (current) {
+      242:  106-block  0
+      383:  106-block  1
+branch  0 taken 187
+branch  1 taken 196 (fallthrough)
+      187:  107:            if (input_key == current->key_t) return current;
+      187:  107-block  0
+call    0 returned 187
+branch  1 taken 46 (fallthrough)
+branch  2 taken 141
+       46:  107-block  1
+      141:  108:            else if (input_key > current->key_t) current = current->right_child;
+      141:  108-block  0
+call    0 returned 141
+branch  1 taken 132 (fallthrough)
+branch  2 taken 9
+      132:  108-block  1
+        9:  109:            else current = current->left_child;
+        9:  109-block  0
+        -:  110:        }
+      196:  111:        return nullptr;
+      196:  111-block  0
+        -:  112:    }
+        -:  113:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E11insert_nodeEPNS6_9tree_nodeERKS5_SA_ called 273 returned 100% blocks executed 88%
+      273:  114:    tree_node* insert_node(tree_node* current,const key_type& input_key, const value_type& input_value) {
+      273:  115:        if (!current) return new tree_node(input_key, input_value);
+      273:  115-block  0
+branch  0 taken 173 (fallthrough)
+branch  1 taken 100
+      173:  115-block  1
+call    2 returned 173
+call    3 returned 173
+branch  4 taken 173 (fallthrough)
+branch  5 taken 0 (throw)
+      173:  115-block  2
+    $$$$$:  115-block  3
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  115-block  4
+call    8 never executed
+      100:  116:        if (input_key < current->key_t) current->left_child = insert_node(current->left_child, input_key, input_value);
+      100:  116-block  0
+call    0 returned 100
+branch  1 taken 1 (fallthrough)
+branch  2 taken 99
+        1:  116-block  1
+call    3 returned 1
+       99:  117:        else current->right_child = insert_node(current->right_child,  input_key, input_value);
+       99:  117-block  0
+call    0 returned 99
+      100:  118:        update_height(current);
+      100:  118-block  0
+call    0 returned 100
+      100:  119:        return balance(current);
+call    0 returned 100
+        -:  120:    }
+        -:  121:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E18delete_simple_nodeEPNS6_9tree_nodeE called 6 returned 100% blocks executed 91%
+        6:  122:    tree_node* delete_simple_node(tree_node* current) {
+       6*:  123:        tree_node *temporary = current->left_child ? current->left_child : current->right_child;
+        6:  123-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+    %%%%%:  123-block  1
+        6:  123-block  2
+        6:  124:        if (!temporary) {
+        6:  124-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 3
+        3:  125:            temporary = current;
+        3:  126:            current = nullptr;
+        3:  126-block  0
+        3:  127:        } else *current = *temporary;
+        3:  127-block  0
+call    0 returned 3
+        6:  128:        delete temporary;
+        6:  128-block  0
+branch  0 taken 6 (fallthrough)
+branch  1 taken 0
+        6:  128-block  1
+call    2 returned 6
+call    3 returned 6
+        6:  129:        return current;
+        6:  129-block  0
+        -:  130:    }
+        -:  131:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E11delete_nodeEPNS6_9tree_nodeERKS5_ called 7 returned 100% blocks executed 58%
+        7:  132:    tree_node* delete_node(tree_node* current, const key_type& input_key) {
+       7*:  133:        if (!current) return nullptr;
+        7:  133-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 7
+    %%%%%:  133-block  1
+       7*:  134:        if (input_key < current->key_t) current->left_child = delete_node(current->left_child, input_key);
+        7:  134-block  0
+call    0 returned 7
+branch  1 taken 0 (fallthrough)
+branch  2 taken 7
+    %%%%%:  134-block  1
+call    3 never executed
+        7:  135:        else if (input_key > current->key_t) current->right_child = delete_node(current->right_child, input_key);
+        7:  135-block  0
+call    0 returned 7
+branch  1 taken 1 (fallthrough)
+branch  2 taken 6
+        1:  135-block  1
+call    3 returned 1
+        -:  136:        else {
+       6*:  137:            if (!current->left_child || !current->right_child) {
+        6:  137-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+    %%%%%:  137-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+        6:  138:                current = delete_simple_node(current);
+        6:  138-block  0
+call    0 returned 6
+        -:  139:            } else {
+    #####:  140:                tree_node *temporary = current->right_child;
+    #####:  141:                while (temporary->left_child) {
+    %%%%%:  141-block  0
+    %%%%%:  141-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:  142:                    temporary = temporary->left_child;
+    %%%%%:  142-block  0
+        -:  143:                }
+    #####:  144:                current->copy_data(temporary);
+    %%%%%:  144-block  0
+call    0 never executed
+    #####:  145:                current->right_child = delete_node(current->right_child, temporary->key_t);
+call    0 never executed
+        -:  146:            }
+        -:  147:        }
+        7:  148:        update_height(current);
+        7:  148-block  0
+call    0 returned 7
+        7:  149:        return balance(current);
+call    0 returned 7
+        -:  150:    }
+        -:  151:
+        -:  152:    void clear_helper(tree_node* current){
+        -:  153:        if(!current) return;
+        -:  154:        clear_helper(current->left_child);
+        -:  155:        clear_helper(current->right_child);
+        -:  156:        delete current;
+        -:  157:    }
+        -:  158:
+        -:  159:    void clear_tree(){
+        -:  160:        if (tree_root) {
+        -:  161:            clear_helper(tree_root);
+        -:  162:            tree_root=nullptr;
+        -:  163:        }
+        -:  164:    }
+        -:  165:
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E9tree_sizeEPNS6_9tree_nodeERi called 36 returned 100% blocks executed 100%
+       36:  166:    int tree_size(tree_node* current, int& counter) const {
+       36:  167:        if (current) {
+       36:  167-block  0
+branch  0 taken 27 (fallthrough)
+branch  1 taken 9
+       27:  168:            counter++;
+       27:  169:            if (current->left_child || current->right_child) {
+       27:  169-block  0
+branch  0 taken 22 (fallthrough)
+branch  1 taken 5
+       22:  169-block  1
+branch  2 taken 6 (fallthrough)
+branch  3 taken 16
+       11:  170:                counter = tree_size(current->left_child, counter);
+       11:  170-block  0
+call    0 returned 11
+       11:  171:                counter = tree_size(current->right_child, counter);
+call    0 returned 11
+        -:  172:            }
+        -:  173:        }
+       36:  174:        return counter;
+       36:  174-block  0
+        -:  175:    }
+        -:  176:
+        -:  177:    tree_node* copy_tree(const tree_node* current) {
+        -:  178:        if (!current) return nullptr;
+        -:  179:        tree_node *new_node = new tree_node(current->key_t, current->value_t);
+        -:  180:        new_node->node_height = current->node_height;
+        -:  181:        new_node->left_child = copy_tree(current->left_child);
+        -:  182:        new_node->right_child = copy_tree(current->right_child);
+        -:  183:        return new_node;
+        -:  184:    }
+        -:  185:
+        -:  186:    template<typename function>
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E23inorder_traverse_helperIZlsRSoRK10dictionaryEUlRKS5_SD_E_EEvPNS6_9tree_nodeERT_ called 6 returned 100% blocks executed 100%
+        6:  187:    void inorder_traverse_helper(tree_node* current, function& function_) const {
+        6:  188:        if (!current) return;
+        6:  188-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 2
+        4:  188-block  1
+        2:  189:        inorder_traverse_helper(current->left_child, function_);
+        2:  189-block  0
+call    0 returned 2
+        2:  190:        function_(current->key_t, current->value_t);
+call    0 returned 2
+        2:  191:        inorder_traverse_helper(current->right_child, function_);
+call    0 returned 2
+        -:  192:    }
+        -:  193:
+        -:  194:public:
+        -:  195:    binary_tree() : tree_root(nullptr) {}
+        -:  196:
+        -:  197:    ~binary_tree() {
+        -:  198:        clear_tree();
+        -:  199:    }
+        -:  200:
+        -:  201:    binary_tree(const binary_tree& other) : tree_root(nullptr) {
+        -:  202:        if (other.tree_root) {
+        -:  203:            tree_root = copy_tree(other.tree_root);
+        -:  204:        }
+        -:  205:    }
+        -:  206:
+        -:  207:    template<typename function>
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E16inorder_traverseIZlsRSoRK10dictionaryEUlRKS5_SD_E_EEvT_ called 2 returned 100% blocks executed 100%
+        2:  208:    void inorder_traverse(function function_) const {
+        2:  209:        inorder_traverse_helper(tree_root, function_);
+        2:  209-block  0
+call    0 returned 2
+        2:  210:    }
+        -:  211:
+        -:  212:    binary_tree& operator=(const binary_tree& other) {
+        -:  213:        if (this != &other) {
+        -:  214:            clear_tree();
+        -:  215:            this->tree_root = copy_tree(other.tree_root);
+        -:  216:        }
+        -:  217:        return *this;
+        -:  218:    }
+        -:  219:
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E13get_tree_rootEv called 5 returned 100% blocks executed 100%
+        5:  220:    tree_node* get_tree_root() const {
+        5:  221:        return tree_root;
+        5:  221-block  0
+        -:  222:    }
+        -:  223:
+        -:  224:    void set_tree_root(tree_node* new_root) {
+        -:  225:        tree_root = new_root;
+        -:  226:    }
+        -:  227:
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_EeqERKS6_ called 7 returned 100% blocks executed 100%
+        7:  228:    bool operator==(const binary_tree& other) const {
+        7:  229:        return are_trees_equal(tree_root, other.tree_root);
+        7:  229-block  0
+call    0 returned 7
+        -:  230:    }
+        -:  231:
+        -:  232:    bool operator!=(const binary_tree& other) const {
+        -:  233:        return !(*this == other);
+        -:  234:    }
+        -:  235:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E13insert_helperERKS5_S8_ called 176 returned 100% blocks executed 100%
+      176:  236:    bool insert_helper(const key_type& key_to_insert, const value_type& value_to_insert) {
+      176:  237:        if(search_node(key_to_insert)) return false;
+      176:  237-block  0
+call    0 returned 176
+branch  1 taken 3 (fallthrough)
+branch  2 taken 173
+        3:  237-block  1
+      173:  238:        tree_root = insert_node(tree_root, key_to_insert, value_to_insert);
+      173:  238-block  0
+call    0 returned 173
+      173:  239:        return true;
+        -:  240:    }
+        -:  241:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E13delete_helperERKS5_ called 8 returned 100% blocks executed 100%
+        8:  242:    bool delete_helper(const key_type& key_to_delete) {
+        8:  243:        if(!search_node(key_to_delete)) return false;
+        8:  243-block  0
+call    0 returned 8
+branch  1 taken 2 (fallthrough)
+branch  2 taken 6
+        2:  243-block  1
+        6:  244:        tree_root = delete_node(tree_root, key_to_delete);
+        6:  244-block  0
+call    0 returned 6
+        6:  245:        return true;
+        -:  246:    }
+        -:  247:
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E8get_sizeEv called 14 returned 100% blocks executed 100%
+       14:  248:    int get_size() const {
+       14:  249:        int word_counter = 0;
+       14:  250:        int number = tree_size(tree_root, word_counter);
+       14:  250-block  0
+call    0 returned 14
+branch  1 taken 14 (fallthrough)
+branch  2 taken 0 (throw)
+       14:  251:        return number;
+       14:  251-block  0
+       14:  251-block  1
+        -:  252:    }
+        -:  253:
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E13contains_nodeERKS5_ called 40 returned 100% blocks executed 100%
+       40:  254:    bool contains_node(const key_type& key_to_find) const {
+       40:  255:        return search_node(key_to_find);
+       40:  255-block  0
+call    0 returned 40
+        -:  256:    }
+        -:  257:
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E9get_valueERKS5_ called 0 returned 0% blocks executed 0%
+    #####:  258:    const value_type& get_value(const key_type& key_to_find) const {
+    #####:  259:        tree_node *temporary = search_node(key_to_find);
+    %%%%%:  259-block  0
+call    0 never executed
+    #####:  260:        if (temporary) return temporary->value_t;
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  260-block  0
+    %%%%%:  260-block  1
+    #####:  261:        else throw std::out_of_range("Ключ не найден.");
+    %%%%%:  261-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:  261-block  1
+call    4 never executed
+    $$$$$:  261-block  2
+call    5 never executed
+        -:  262:    }
+        -:  263:
+function _ZN11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E9get_valueERKS5_ called 18 returned 83% blocks executed 89%
+       18:  264:    value_type& get_value(const key_type& key_to_find) {
+       18:  265:        tree_node *temporary = search_node(key_to_find);
+       18:  265-block  0
+call    0 returned 18
+       18:  266:        if (temporary) return temporary->value_t;
+branch  0 taken 15 (fallthrough)
+branch  1 taken 3
+       15:  266-block  0
+       15:  266-block  1
+        3:  267:        else throw std::out_of_range("Ключ не найден.");
+        3:  267-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:  267-block  1
+call    4 returned 0
+    $$$$$:  267-block  2
+call    5 never executed
+        -:  268:    }
+        -:  269:
+        -:  270:    int print_dictionary(std::ostream& output, tree_node* current, int& counter) const {
+        -:  271:        if (current) {
+        -:  272:            counter = print_dictionary(output, current->left_child, counter);
+        -:  273:            counter++;
+        -:  274:            output << counter << ". ";
+        -:  275:            output << *current;
+        -:  276:            counter = print_dictionary(output, current->right_child, counter);
+        -:  277:        }
+        -:  278:        return counter;
+        -:  279:    }
+        -:  280:
+function _ZNK11binary_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E10empty_treeEv called 5 returned 100% blocks executed 100%
+        5:  281:    bool empty_tree() const {
+        5:  282:        return !get_tree_root();
+        5:  282-block  0
+call    0 returned 5
+        -:  283:    }
+        -:  284:};
+        -:  285:
+        -:  286:#endif //SEM3_L1_PPOIS_BINARY_TREE_H
